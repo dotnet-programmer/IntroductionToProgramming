@@ -16,14 +16,14 @@ try
 	{
 		case 1:
 			/*
-			Napisz program, który tworzy klasę Prostokat, zawierającą dwie prywatne dane składowe: dlugosc, szerokosc, dwie prywatne metody: powierzchnia(), obwod() oraz metodę publiczną – Prezentuj() 
+			Napisz program, który tworzy klasę Prostokat, zawierającą dwie prywatne dane składowe: dlugosc, szerokosc, dwie prywatne metody: powierzchnia(), obwod() oraz metodę publiczną – Prezentuj()
 			(która wyświetla powierzchnię i obwód prostokąta) i konstruktor inicjalizujący. W metodzie Main() zdefiniuj obiekt i uruchom dla niego metodę Prezentuj().
 			*/
 			Zadanie_6_1();
 			break;
 		case 2:
 			/*
-			Uzupełnij program z poprzedniego zadania o definicje tablicy obiektów dla prostokątów. W metodzie Main() wyświetl powierzchnie 
+			Uzupełnij program z poprzedniego zadania o definicje tablicy obiektów dla prostokątów. W metodzie Main() wyświetl powierzchnie
 			oraz obwód wszystkich prostokątów w tablicy używając (wewnątrz pętli foreach) metody publicznej Prezentuj().
 			*/
 			Zadanie_6_2();
@@ -45,7 +45,7 @@ try
 			break;
 		case 5:
 			/*
-			Napisz program tworzący klasę Punkt do obsługi punktów na płaszczyźnie. Klasa ta ma zawierać: konstruktor, którego argumentami będą współrzędne punktu, metodę składową Przesun(), 
+			Napisz program tworzący klasę Punkt do obsługi punktów na płaszczyźnie. Klasa ta ma zawierać: konstruktor, którego argumentami będą współrzędne punktu, metodę składową Przesun(),
 			realizującą przesunięcie o zadane wielkości oraz metodę składową Wyswietl() wypisującą aktualne współrzędne punktu. Współrzędne punktu mają być zdefiniowane poprzez właściwości.
 			*/
 			Zadanie_6_5();
@@ -64,7 +64,7 @@ try
 			break;
 		case 8:
 			/*
-			Zdefiniuj klasę Prostopadloscian, która pozwoli na reprezentację danych opisujących długość, szerokość i wysokość prostopadłościanu. 
+			Zdefiniuj klasę Prostopadloscian, która pozwoli na reprezentację danych opisujących długość, szerokość i wysokość prostopadłościanu.
 			W klasie zaimplementuj metody pozwalające na obliczenie objętości prostopadłościanu, oraz porównanie objętości dwóch prostopadłościanów.
 			*/
 			Zadanie_6_8();
@@ -77,10 +77,10 @@ try
 			break;
 		case 10:
 			/*
-			Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące pola: nazwisko, punktyMatematyka, punktyInformatyka, punktyJezykObcy. 
-			W trzech ostatnich polach mają być zapisane punkty za przedmioty zdawane na maturze (dla uproszczenia uwzględniamy tylko jeden poziom zdawanej matury, np. podstawowy). 
-			Jeden punkt to jeden procent (tj. student, który ma 55% z matematyki ma mieć 55 punktów z tego przedmiotu). 
-			Struktura ma posiadać metodę obliczającą łączną liczbę punktów kandydata według przelicznika: 0,6 punktów z matematyki + 0,5 punktów z informatyki + 0,2 punktów z języka obcego. 
+			Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące pola: nazwisko, punktyMatematyka, punktyInformatyka, punktyJezykObcy.
+			W trzech ostatnich polach mają być zapisane punkty za przedmioty zdawane na maturze (dla uproszczenia uwzględniamy tylko jeden poziom zdawanej matury, np. podstawowy).
+			Jeden punkt to jeden procent (tj. student, który ma 55% z matematyki ma mieć 55 punktów z tego przedmiotu).
+			Struktura ma posiadać metodę obliczającą łączną liczbę punktów kandydata według przelicznika: 0,6 punktów z matematyki + 0,5 punktów z informatyki + 0,2 punktów z języka obcego.
 			W metodzie Main() utwórz obiekty dla struktury (jako elementy tablicy) dla kilku kandydatów i pokaż listę kandydatów, zawierającą nazwisko i obok, w tej samej linii, obliczoną łączną liczbę punktów.
 			*/
 			Zadanie_6_10();
@@ -100,7 +100,7 @@ finally
 }
 
 /*
-Napisz program, który tworzy klasę Prostokat, zawierającą dwie prywatne dane składowe: dlugosc, szerokosc, dwie prywatne metody: powierzchnia(), obwod() oraz metodę publiczną – Prezentuj() 
+Napisz program, który tworzy klasę Prostokat, zawierającą dwie prywatne dane składowe: dlugosc, szerokosc, dwie prywatne metody: powierzchnia(), obwod() oraz metodę publiczną – Prezentuj()
 (która wyświetla powierzchnię i obwód prostokąta) i konstruktor inicjalizujący. W metodzie Main() zdefiniuj obiekt i uruchom dla niego metodę Prezentuj().
 */
 static void Zadanie_6_1()
@@ -111,7 +111,7 @@ static void Zadanie_6_1()
 }
 
 /*
-Uzupełnij program z poprzedniego zadania o definicje tablicy obiektów dla prostokątów. W metodzie Main() wyświetl powierzchnie 
+Uzupełnij program z poprzedniego zadania o definicje tablicy obiektów dla prostokątów. W metodzie Main() wyświetl powierzchnie
 oraz obwód wszystkich prostokątów w tablicy używając (wewnątrz pętli foreach) metody publicznej Prezentuj().
 */
 static void Zadanie_6_2()
@@ -119,7 +119,9 @@ static void Zadanie_6_2()
 	Console.WriteLine("Zadanie 6.2");
 	Prostokat[] tablica = { new(5, 10), new(3, 3), new(4, 8), new(1, 12), new(9, 6), new(1, 1) };
 	foreach (var item in tablica)
+	{
 		item.Prezentuj();
+	}
 }
 
 /*
@@ -130,7 +132,10 @@ static void Zadanie_6_3()
 	Console.WriteLine("Zadanie 6.3");
 	Prostokat[] tablica = { new(5, 10), new(3, 3), new(4, 8), new(1, 12), new(9, 6), new(1, 1) };
 	foreach (var item in tablica)
+	{
 		item.Prezentuj();
+	}
+
 	Prostokat.Najwiekszy();
 }
 
@@ -154,7 +159,7 @@ static void Zadanie_6_4()
 }
 
 /*
-Napisz program tworzący klasę Punkt do obsługi punktów na płaszczyźnie. Klasa ta ma zawierać: konstruktor, którego argumentami będą współrzędne punktu, metodę składową Przesun(), 
+Napisz program tworzący klasę Punkt do obsługi punktów na płaszczyźnie. Klasa ta ma zawierać: konstruktor, którego argumentami będą współrzędne punktu, metodę składową Przesun(),
 realizującą przesunięcie o zadane wielkości oraz metodę składową Wyswietl() wypisującą aktualne współrzędne punktu. Współrzędne punktu mają być zdefiniowane poprzez właściwości.
 */
 static void Zadanie_6_5()
@@ -198,32 +203,26 @@ Zdefiniuj klasę Odcinek składającą się z dwóch punktów klasy Punkt. W kla
 static void Zadanie_6_7()
 {
 	Console.WriteLine("Zadanie 6.7");
-	Odcinek odc1 = new Odcinek(new Punkt(1, 1), new Punkt(2, 2));
+	Odcinek odc1 = new(new Punkt(1, 1), new Punkt(2, 2));
 	Console.WriteLine(odc1.DlugoscOdcinka());
 }
 
 /*
-Zdefiniuj klasę Prostopadloscian, która pozwoli na reprezentację danych opisujących długość, szerokość i wysokość prostopadłościanu. 
+Zdefiniuj klasę Prostopadloscian, która pozwoli na reprezentację danych opisujących długość, szerokość i wysokość prostopadłościanu.
 W klasie zaimplementuj metody pozwalające na obliczenie objętości prostopadłościanu, oraz porównanie objętości dwóch prostopadłościanów.
 */
-static void Zadanie_6_8()
-{
-	Console.WriteLine("Zadanie 6.8");
-}
+static void Zadanie_6_8() => Console.WriteLine("Zadanie 6.8");
 
 /*
 Wykonaj zadania 6.1 oraz 6.2 z użyciem struktury (zamiast klasy).
 */
-static void Zadanie_6_9()
-{
-	Console.WriteLine("Zadanie 6.9");
-}
+static void Zadanie_6_9() => Console.WriteLine("Zadanie 6.9");
 
 /*
-Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące pola: nazwisko, punktyMatematyka, punktyInformatyka, punktyJezykObcy. 
-W trzech ostatnich polach mają być zapisane punkty za przedmioty zdawane na maturze (dla uproszczenia uwzględniamy tylko jeden poziom zdawanej matury, np. podstawowy). 
-Jeden punkt to jeden procent (tj. student, który ma 55% z matematyki ma mieć 55 punktów z tego przedmiotu). 
-Struktura ma posiadać metodę obliczającą łączną liczbę punktów kandydata według przelicznika: 0,6 punktów z matematyki + 0,5 punktów z informatyki + 0,2 punktów z języka obcego. 
+Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące pola: nazwisko, punktyMatematyka, punktyInformatyka, punktyJezykObcy.
+W trzech ostatnich polach mają być zapisane punkty za przedmioty zdawane na maturze (dla uproszczenia uwzględniamy tylko jeden poziom zdawanej matury, np. podstawowy).
+Jeden punkt to jeden procent (tj. student, który ma 55% z matematyki ma mieć 55 punktów z tego przedmiotu).
+Struktura ma posiadać metodę obliczającą łączną liczbę punktów kandydata według przelicznika: 0,6 punktów z matematyki + 0,5 punktów z informatyki + 0,2 punktów z języka obcego.
 W metodzie Main() utwórz obiekty dla struktury (jako elementy tablicy) dla kilku kandydatów i pokaż listę kandydatów, zawierającą nazwisko i obok, w tej samej linii, obliczoną łączną liczbę punktów.
 */
 static void Zadanie_6_10()
@@ -231,5 +230,7 @@ static void Zadanie_6_10()
 	Console.WriteLine("Zadanie 6.10");
 	StudyCandidate[] candidates = { new("Janek", 23, 25, 56), new("Franek", 63, 75, 86), new("Brajanek", 1, 2, 3) };
 	foreach (var item in candidates)
+	{
 		Console.WriteLine($"{item.Name} - {item.TotalPoints()}");
+	}
 }

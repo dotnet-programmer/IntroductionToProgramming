@@ -14,19 +14,19 @@ try
 	{
 		case 1:
 			// Napisz program przeliczający temperaturę w stopniach Celsjusza na temperaturę w stopniach Fahrenheita.
-			// Program ma prosić użytkownika o podanie temperatury w stopniach Celsjusza. 
+			// Program ma prosić użytkownika o podanie temperatury w stopniach Celsjusza.
 			// Wzór: F = 32 + 9/5 * C
 			Zadanie_2_1();
 			break;
 		case 2:
 			// Napisz program, który oblicza deltę dla równania kwadratowego ax2 + bx + c = 0.
-			// Program ma prosić użytkownika o podanie współczynników równania a, b oraz c. 
+			// Program ma prosić użytkownika o podanie współczynników równania a, b oraz c.
 			// Wzór: delta = b * b - 4ac
 			Zadanie_2_2();
 			break;
 		case 3:
 			// Napisz program, który oblicza wskaźnik masy ciała BMI.
-			// Program ma prosić użytkownika o podanie wagi w kilogramach oraz wzrostu w metrach. 
+			// Program ma prosić użytkownika o podanie wagi w kilogramach oraz wzrostu w metrach.
 			// Wzór: BMI = masa / (wzrost * wzrost)
 			Zadanie_2_3();
 			break;
@@ -43,7 +43,7 @@ try
 			Zadanie_2_5();
 			break;
 		case 6:
-			// Jaką wartość będzie miała zmienna x po wykonaniu instrukcji? 
+			// Jaką wartość będzie miała zmienna x po wykonaniu instrukcji?
 			// int x, y = 4; x = (y -= 2); x = y++; x = y--;
 			// Najpierw oblicz wartości zmiennych, a dopiero później sprawdź wynik uruchamiając program.
 			Zadanie_2_6();
@@ -68,8 +68,8 @@ try
 			Zadanie_2_9();
 			break;
 		case 10:
-			// Po wykonaniu przedstawionego niżej kodu programu zmienna populationDensity przyjmie wartość 0. 
-			// Odpowiedz dlaczego i zmień program (w linii, gdzie jest obliczana zmienna gestoscZaludnienia) tak, aby wartość tej zmiennej wynosiła 0,1 (czyli 10/100): 
+			// Po wykonaniu przedstawionego niżej kodu programu zmienna populationDensity przyjmie wartość 0.
+			// Odpowiedz dlaczego i zmień program (w linii, gdzie jest obliczana zmienna gestoscZaludnienia) tak, aby wartość tej zmiennej wynosiła 0,1 (czyli 10/100):
 			// int area = 100, persons = 10; double populationDensity = persons/area; Console.WriteLine(populationDensity);
 			Zadanie_2_10();
 			break;
@@ -88,7 +88,7 @@ finally
 }
 
 // Napisz program przeliczający temperaturę w stopniach Celsjusza na temperaturę w stopniach Fahrenheita.
-// Program ma prosić użytkownika o podanie temperatury w stopniach Celsjusza. 
+// Program ma prosić użytkownika o podanie temperatury w stopniach Celsjusza.
 // Wzór: F = 32 + 9/5 * C
 static void Zadanie_2_1()
 {
@@ -103,7 +103,7 @@ static void Zadanie_2_1()
 }
 
 // Napisz program, który oblicza deltę dla równania kwadratowego ax2 + bx + c = 0.
-// Program ma prosić użytkownika o podanie współczynników równania a, b oraz c. 
+// Program ma prosić użytkownika o podanie współczynników równania a, b oraz c.
 // Wzór: delta = b * b - 4ac
 static void Zadanie_2_2()
 {
@@ -119,7 +119,7 @@ static void Zadanie_2_2()
 }
 
 // Napisz program, który oblicza wskaźnik masy ciała BMI.
-// Program ma prosić użytkownika o podanie wagi w kilogramach oraz wzrostu w metrach. 
+// Program ma prosić użytkownika o podanie wagi w kilogramach oraz wzrostu w metrach.
 // Wzór: BMI = masa / (wzrost * wzrost)
 static void Zadanie_2_3()
 {
@@ -155,7 +155,7 @@ static void Zadanie_2_5()
 	Console.WriteLine(x);
 }
 
-// Jaką wartość będzie miała zmienna x po wykonaniu instrukcji? 
+// Jaką wartość będzie miała zmienna x po wykonaniu instrukcji?
 // int x, y = 4; x = (y -= 2); x = y++; x = y--;
 // Najpierw oblicz wartości zmiennych, a dopiero później sprawdź wynik uruchamiając program.
 static void Zadanie_2_6()
@@ -250,8 +250,8 @@ static void Zadanie_2_9()
 	Console.WriteLine("f) wynik={0} x={1} y={2} z={3}", wynik, x, y, z); // true, x=1, y=4, z=5
 }
 
-// Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia przyjmie wartość 0. 
-// Odpowiedz dlaczego i zmień program (w linii, gdzie jest obliczana zmienna gestoscZaludnienia) tak, aby wartość tej zmiennej wynosiła 0,1 (czyli 10/100): 
+// Po wykonaniu przedstawionego niżej kodu programu zmienna gestoscZaludnienia przyjmie wartość 0.
+// Odpowiedz dlaczego i zmień program (w linii, gdzie jest obliczana zmienna gestoscZaludnienia) tak, aby wartość tej zmiennej wynosiła 0,1 (czyli 10/100):
 // int area = 100, persons = 10; double populationDensity = persons/area; Console.WriteLine(populationDensity);
 static void Zadanie_2_10()
 {

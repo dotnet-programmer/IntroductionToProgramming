@@ -19,7 +19,7 @@ try
 			Zadanie_4_1();
 			break;
 		case 2:
-			// Napisz program kopiujący z danej tablicy liczb całkowitych tab1 do nowej tablicy tab2 wyłącznie wartości dodatnie. 
+			// Napisz program kopiujący z danej tablicy liczb całkowitych tab1 do nowej tablicy tab2 wyłącznie wartości dodatnie.
 			// Obie tablice mają być jednowymiarowe o rozmiarze równym 10 (czyli 10-elemetowe). Elementy pierwszej tablicy (tab1) należy wpisać w trakcie deklaracji tej tablicy.
 			Zadanie_4_2();
 			break;
@@ -32,7 +32,7 @@ try
 			Zadanie_4_3();
 			break;
 		case 4:
-			// Napisz program, który podaje, ile jest liczb pierwszych w tablicy 100 elementowej typu int. Tablicę należy wypełnić losowymi wartościami. 
+			// Napisz program, który podaje, ile jest liczb pierwszych w tablicy 100 elementowej typu int. Tablicę należy wypełnić losowymi wartościami.
 			// Wskazówka: Poniższy fragment programu pokazuje działanie klasy Random (która zawiera generator liczb pseudolosowych)
 			// – w pętli zostanie wyświetlonych 100 liczb wybranych losowo z zakresu 1 – 999 (o zakresie decydują argumenty podane w wywołaniu metody Next()43).
 			// Random rand = new Random();
@@ -41,20 +41,20 @@ try
 			Zadanie_4_4();
 			break;
 		case 5:
-			// Dana jest n-elementowa tablica liczb całkowitych tab1. Napisz program kopiujący wartości elementów tablicy tab1 do tablicy tab2 (o tym samym rozmiarze) z przesunięciem o jedną pozycje. 
-			// To znaczy, że element w tablicy źródłowej o indeksie 0 powinien znaleźć się w tablicy docelowej pod indeksem 1, element o indeksie 1 ma być w tablicy docelowej pod indeksem 2 itd. 
+			// Dana jest n-elementowa tablica liczb całkowitych tab1. Napisz program kopiujący wartości elementów tablicy tab1 do tablicy tab2 (o tym samym rozmiarze) z przesunięciem o jedną pozycje.
+			// To znaczy, że element w tablicy źródłowej o indeksie 0 powinien znaleźć się w tablicy docelowej pod indeksem 1, element o indeksie 1 ma być w tablicy docelowej pod indeksem 2 itd.
 			// Element ostatni tablicy źródłowej ma być elementem o indeksie 0 w tablicy docelowej.
 			Zadanie_4_5();
 			break;
 		case 6:
-			// Napisz program, który deklaruje i inicjalizuje dwuwymiarową tablicę liczb rzeczywistych o rozmiarze 5 x 5. 
-			// Program ma wyświetlić elementy tablicy (wiersz po wierszu), a następnie wyświetlić sumę elementów znajdujących się na głównej przekątnej tablicy 
+			// Napisz program, który deklaruje i inicjalizuje dwuwymiarową tablicę liczb rzeczywistych o rozmiarze 5 x 5.
+			// Program ma wyświetlić elementy tablicy (wiersz po wierszu), a następnie wyświetlić sumę elementów znajdujących się na głównej przekątnej tablicy
 			// (główna przekątna – od elementu o indeksach 0,0 do elementu o indeksach n,n).
 			Zadanie_4_6();
 			break;
 		case 7:
 			/*
-			Napisz program, który dodaje dwie macierze o rozmiarze 2 x 3. Elementy macierzy należy umieścić w tablicach dwuwymiarowych w trakcie deklaracji. 
+			Napisz program, który dodaje dwie macierze o rozmiarze 2 x 3. Elementy macierzy należy umieścić w tablicach dwuwymiarowych w trakcie deklaracji.
 			Program ma wyświetlić macierz wynikową. Wskazówka: Dodawanie macierzy – macierz wynikowa C zawiera elementy, które stanowią sumę elementów macierzy A i B o odpowiednich indeksach, tzn.
 			element w zerowym wierszu i zerowej kolumnie macierzy A jest dodawany do elementu o tych samych indeksach macierzy B, element A [0,1] do B [0,1]... itd.
 			*/
@@ -88,7 +88,7 @@ try
 			break;
 		case 11:
 			/*
-			Napisz program analizujący częstość występowania poszczególnych znaków w łańcuchu znaków wprowadzonym przez użytkownika. 
+			Napisz program analizujący częstość występowania poszczególnych znaków w łańcuchu znaków wprowadzonym przez użytkownika.
 			Np. dla wprowadzonego tekstu „abrakadabra” program powinien wyświetlić informacje: a – 5, b – 2, r – 2, k – 1, d – 1.
 			*/
 			Zadanie_4_11();
@@ -107,32 +107,32 @@ try
 			break;
 		case 13:
 			/*
-			Napisz program, który przeanalizuje dany łańcuch pod kątem wielokrotnego występowania słów w tekście. 
-			Przykładowo dla zmiennej łańcuchowej o zawartości: „Kiedy idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się idzie – odpowiedział Puchatek” 
+			Napisz program, który przeanalizuje dany łańcuch pod kątem wielokrotnego występowania słów w tekście.
+			Przykładowo dla zmiennej łańcuchowej o zawartości: „Kiedy idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się idzie – odpowiedział Puchatek”
 			– program powinien wypisać raport o słowach powielonych w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.
 			*/
 			Zadanie_4_13();
 			break;
 		case 14:
 			/*
-			W danej firmie środki trwałe mają identyfikatory złożone z kilku liter, myślnika oraz czterech cyfr. Te cztery cyfry to rok zakupu danego środka trwałego. 
-			Przykładowe identyfikatory to: KOMG-2002, BH-2010. Napisz program, który deklaruje 5-cio elementową tablicę typu string dla środków trwałych, 
+			W danej firmie środki trwałe mają identyfikatory złożone z kilku liter, myślnika oraz czterech cyfr. Te cztery cyfry to rok zakupu danego środka trwałego.
+			Przykładowe identyfikatory to: KOMG-2002, BH-2010. Napisz program, który deklaruje 5-cio elementową tablicę typu string dla środków trwałych,
 			którą należy zainicjalizować przykładowymi identyfikatorami w czasie deklaracji. Program ma dla każdego środka trwałego podać liczbę lat, jakie upłynęły od jego zakupu.
 			*/
 			Zadanie_4_14();
 			break;
 		case 15:
 			/*
-			Napisz program, który szyfruje podany przez użytkownika tekst prostym szyfrem podstawieniowym zwanym „gaderypoluki”. Nazwa pochodzi od jednego z najczęściej używanych kluczy GA-DE-RY-PO-LU-KI. 
-			Klucz ten zawiera pary znakowych zamienników umieszczonych między myślnikami. Litery, których nie ma w kluczu pozostawia się w szyfrowanym tekście bez zmian. 
+			Napisz program, który szyfruje podany przez użytkownika tekst prostym szyfrem podstawieniowym zwanym „gaderypoluki”. Nazwa pochodzi od jednego z najczęściej używanych kluczy GA-DE-RY-PO-LU-KI.
+			Klucz ten zawiera pary znakowych zamienników umieszczonych między myślnikami. Litery, których nie ma w kluczu pozostawia się w szyfrowanym tekście bez zmian.
 			Przykładowo tekst „DRZEWO” po zaszyfrowaniu ma postać „EYZDWP”.
 			0 1 2 3 4 5 6 7 8 9 10 11
 			G A D E R Y P O L U K  I
-			Wskazówki: Można zastosować w programie klucz z pominięciem myślników (GADERYPOLUKI). Wówczas można przyjąć, że znaki na parzystych pozycjach (numerując od 0) mają zamiennik po prawej stronie, 
-			a znaki na nieparzystych pozycjach mają swój zamiennik z lewej strony (np. litera O jest na pozycji numer 7 i ma swój zamiennik z lewej strony, czyli P). 
-			Zostaje zatem sprawdzenie, czy dany znak szyfrowanego tekstu występuje w kluczu, a jeśli tak to, na której pozycji klucza – parzystej czy nieparzystej. 
-			W tym celu możesz wykorzystać poznaną w tym rozdziale metodę IndexOf(). Dla zaszyfrowanego tekstu najlepiej będzie zadeklarować nową zmienną łańcuchową i zainicjalizować ją wartością pustą. 
-			Zalecamy, aby zrobić to przy pomocy statycznego pola publicznego String.Empty zawierającego łańcuch pusty (czyli ""), np.: string tekstZaszyfrowany = String.Empty;. 
+			Wskazówki: Można zastosować w programie klucz z pominięciem myślników (GADERYPOLUKI). Wówczas można przyjąć, że znaki na parzystych pozycjach (numerując od 0) mają zamiennik po prawej stronie,
+			a znaki na nieparzystych pozycjach mają swój zamiennik z lewej strony (np. litera O jest na pozycji numer 7 i ma swój zamiennik z lewej strony, czyli P).
+			Zostaje zatem sprawdzenie, czy dany znak szyfrowanego tekstu występuje w kluczu, a jeśli tak to, na której pozycji klucza – parzystej czy nieparzystej.
+			W tym celu możesz wykorzystać poznaną w tym rozdziale metodę IndexOf(). Dla zaszyfrowanego tekstu najlepiej będzie zadeklarować nową zmienną łańcuchową i zainicjalizować ją wartością pustą.
+			Zalecamy, aby zrobić to przy pomocy statycznego pola publicznego String.Empty zawierającego łańcuch pusty (czyli ""), np.: string tekstZaszyfrowany = String.Empty;.
 			A następnie w pętli dodawać kolejny znak z tekstu źródłowego – ten sam lub zamieniony zgodnie z kluczem (jeśli jest w kluczu).
 			*/
 			Zadanie_4_15();
@@ -159,21 +159,30 @@ static void Zadanie_4_1()
 	Console.WriteLine("Zadanie 4.1");
 	Console.Write("Podaj rozmiar tablicy: ");
 	if (!int.TryParse(Console.ReadLine(), out int rozmiar))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	int[] tablica = new int[rozmiar];
 	for (int i = 0; i < tablica.Length; i++)
 	{
 		Console.Write($"Podaj {i + 1} element tablicy: ");
 		if (!int.TryParse(Console.ReadLine(), out int element))
+		{
 			throw new ArgumentException("Nie wpisałeś liczby!");
+		}
+
 		tablica[i] = element;
 	}
 	foreach (var item in tablica)
+	{
 		Console.Write(item + " ");
+	}
+
 	Console.WriteLine();
 }
 
-// Napisz program kopiujący z danej tablicy liczb całkowitych tab1 do nowej tablicy tab2 wyłącznie wartości dodatnie. 
+// Napisz program kopiujący z danej tablicy liczb całkowitych tab1 do nowej tablicy tab2 wyłącznie wartości dodatnie.
 // Obie tablice mają być jednowymiarowe o rozmiarze równym 10 (czyli 10-elemetowe). Elementy pierwszej tablicy (tab1) należy wpisać w trakcie deklaracji tej tablicy.
 static void Zadanie_4_2()
 {
@@ -189,10 +198,16 @@ static void Zadanie_4_2()
 		}
 	}
 	foreach (var item in tab1)
+	{
 		Console.Write(item + " ");
+	}
+
 	Console.WriteLine();
 	foreach (var item in tab2)
+	{
 		Console.Write(item + " ");
+	}
+
 	Console.WriteLine();
 }
 
@@ -205,13 +220,19 @@ static void Zadanie_4_3()
 {
 	Console.Write("Podaj rozmiar tablicy: ");
 	if (!int.TryParse(Console.ReadLine(), out int rozmiar))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	int[] tablica = new int[rozmiar];
 	for (int i = 0; i < tablica.Length; i++)
 	{
 		Console.Write($"Podaj {i + 1} element tablicy: ");
 		if (!int.TryParse(Console.ReadLine(), out int element))
+		{
 			throw new ArgumentException("Nie wpisałeś liczby!");
+		}
+
 		tablica[i] = element;
 	}
 	int max = tablica[0];
@@ -233,7 +254,10 @@ static void Zadanie_4_3()
 			minPos = i;
 		}
 		if (tablica[i] > 0)
+		{
 			ileDodatnich++;
+		}
+
 		srednia += tablica[i];
 	}
 	srednia /= rozmiar;
@@ -243,7 +267,7 @@ static void Zadanie_4_3()
 	Console.WriteLine($"Ile dodatnich = {ileDodatnich}");
 }
 
-// Napisz program, który podaje, ile jest liczb pierwszych w tablicy 100 elementowej typu int. Tablicę należy wypełnić losowymi wartościami. 
+// Napisz program, który podaje, ile jest liczb pierwszych w tablicy 100 elementowej typu int. Tablicę należy wypełnić losowymi wartościami.
 // Wskazówka: Poniższy fragment programu pokazuje działanie klasy Random (która zawiera generator liczb pseudolosowych)
 // – w pętli zostanie wyświetlonych 100 liczb wybranych losowo z zakresu 1 – 999 (o zakresie decydują argumenty podane w wywołaniu metody Next()43).
 // Random rand = new Random();
@@ -255,44 +279,66 @@ static void Zadanie_4_4()
 	var rand = new Random();
 	int[] tablica = new int[100];
 	for (int i = 0; i < tablica.Length; i++)
+	{
 		tablica[i] = rand.Next(1, 1000);
-	List<int> pierwsze = new List<int>();
+	}
+
+	List<int> pierwsze = new();
 	foreach (var item in tablica)
 	{
 		if (CzyPierwsza(item))
+		{
 			pierwsze.Add(item);
+		}
 	}
 	pierwsze.Sort();
 	Console.WriteLine($"Ilość liczb pierwszych w zbiorze: {pierwsze.Count}");
 	Console.WriteLine("Te liczby to: ");
 	foreach (var item in pierwsze)
+	{
 		Console.Write(item + " ");
+	}
+
 	Console.WriteLine();
 
-	bool CzyPierwsza(int item)
+	static bool CzyPierwsza(int item)
 	{
 		if (item < 2)
+		{
 			return false;
+		}
+
 		for (int i = 2; i < item; i++)
+		{
 			if (item % i == 0)
+			{
 				return false;
+			}
+		}
+
 		return true;
 	}
 }
 
-// Dana jest n-elementowa tablica liczb całkowitych tab1. Napisz program kopiujący wartości elementów tablicy tab1 do tablicy tab2 (o tym samym rozmiarze) z przesunięciem o jedną pozycje. 
-// To znaczy, że element w tablicy źródłowej o indeksie 0 powinien znaleźć się w tablicy docelowej pod indeksem 1, element o indeksie 1 ma być w tablicy docelowej pod indeksem 2 itd. 
+// Dana jest n-elementowa tablica liczb całkowitych tab1. Napisz program kopiujący wartości elementów tablicy tab1 do tablicy tab2 (o tym samym rozmiarze) z przesunięciem o jedną pozycje.
+// To znaczy, że element w tablicy źródłowej o indeksie 0 powinien znaleźć się w tablicy docelowej pod indeksem 1, element o indeksie 1 ma być w tablicy docelowej pod indeksem 2 itd.
 // Element ostatni tablicy źródłowej ma być elementem o indeksie 0 w tablicy docelowej.
 static void Zadanie_4_5()
 {
 	Console.WriteLine("Zadanie 4.5");
 	Console.Write("Podaj rozmiar tablicy: ");
 	if (!int.TryParse(Console.ReadLine(), out int rozmiar))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
-	Random rand = new Random();
+	}
+
+	Random rand = new();
 	int[] tab1 = new int[rozmiar];
 	for (int i = 0; i < tab1.Length; i++)
+	{
 		tab1[i] = rand.Next(1, 1000);
+	}
+
 	int[] tab2 = new int[tab1.Length];
 	//for (int i = 0; i < tab1.Length; i++)
 	//{
@@ -309,15 +355,21 @@ static void Zadanie_4_5()
 	}
 
 	foreach (var item in tab1)
+	{
 		Console.Write(item + " ");
+	}
+
 	Console.WriteLine();
 	foreach (var item in tab2)
+	{
 		Console.Write(item + " ");
+	}
+
 	Console.WriteLine();
 }
 
-// Napisz program, który deklaruje i inicjalizuje dwuwymiarową tablicę liczb rzeczywistych o rozmiarze 5 x 5. 
-// Program ma wyświetlić elementy tablicy (wiersz po wierszu), a następnie wyświetlić sumę elementów znajdujących się na głównej przekątnej tablicy 
+// Napisz program, który deklaruje i inicjalizuje dwuwymiarową tablicę liczb rzeczywistych o rozmiarze 5 x 5.
+// Program ma wyświetlić elementy tablicy (wiersz po wierszu), a następnie wyświetlić sumę elementów znajdujących się na głównej przekątnej tablicy
 // (główna przekątna – od elementu o indeksach 0,0 do elementu o indeksach n,n).
 static void Zadanie_4_6()
 {
@@ -326,23 +378,31 @@ static void Zadanie_4_6()
 	var random = new Random();
 	double suma = 0;
 	for (int i = 0; i < tablica.GetLength(0); i++) // GetLength(0) pobiera rozmiar tablicy pierwszego wymiaru
+	{
 		for (int j = 0; j < tablica.GetLength(1); j++) // GetLength(1) pobiera rozmiar tablicy drugiego wymiaru
 		{
 			tablica[i, j] = random.NextDouble() * random.Next(100);
 			if (i == j)
+			{
 				suma += tablica[i, j];
+			}
 		}
+	}
+
 	for (int i = 0; i < tablica.GetLength(0); i++)
 	{
 		for (int j = 0; j < tablica.GetLength(1); j++)
+		{
 			Console.Write($"{tablica[i, j],6:0.00} "); // formatowanie tekstu, wyrównanie do 6 znaków, 2 miejsca po przecinku
+		}
+
 		Console.WriteLine();
 	}
 	Console.WriteLine($"Suma elementów na głównej przekątnej = {suma:0.00}");
 }
 
 /*
-Napisz program, który dodaje dwie macierze o rozmiarze 2 x 3. Elementy macierzy należy umieścić w tablicach dwuwymiarowych w trakcie deklaracji. 
+Napisz program, który dodaje dwie macierze o rozmiarze 2 x 3. Elementy macierzy należy umieścić w tablicach dwuwymiarowych w trakcie deklaracji.
 Program ma wyświetlić macierz wynikową. Wskazówka: Dodawanie macierzy – macierz wynikowa C zawiera elementy, które stanowią sumę elementów macierzy A i B o odpowiednich indeksach, tzn.
 element w zerowym wierszu i zerowej kolumnie macierzy A jest dodawany do elementu o tych samych indeksach macierzy B, element A[0,1] do B[0,1]... itd.
 */
@@ -353,12 +413,20 @@ static void Zadanie_4_7()
 	double[,] tabB = { { 3, 3, 3 }, { 4, 4, 4 } };
 	double[,] tabC = new double[2, 3];
 	for (int i = 0; i < tabA.GetLength(0); i++)
+	{
 		for (int j = 0; j < tabA.GetLength(1); j++)
+		{
 			tabC[i, j] = tabA[i, j] + tabB[i, j];
+		}
+	}
+
 	for (int i = 0; i < tabC.GetLength(0); i++)
 	{
 		for (int j = 0; j < tabC.GetLength(1); j++)
+		{
 			Console.Write($"{tabC[i, j],6:0.00} ");
+		}
+
 		Console.WriteLine();
 	}
 }
@@ -476,7 +544,7 @@ static void Zadanie_4_10()
 }
 
 /*
-Napisz program analizujący częstość występowania poszczególnych znaków w łańcuchu znaków wprowadzonym przez użytkownika. 
+Napisz program analizujący częstość występowania poszczególnych znaków w łańcuchu znaków wprowadzonym przez użytkownika.
 Np. dla wprowadzonego tekstu „abrakadabra” program powinien wyświetlić informacje: a – 5, b – 2, r – 2, k – 1, d – 1.
 */
 static void Zadanie_4_11()
@@ -488,12 +556,18 @@ static void Zadanie_4_11()
 	foreach (char item in napis)
 	{
 		if (litery.ContainsKey(item))
+		{
 			litery[item]++;
+		}
 		else
+		{
 			litery[item] = 1;
+		}
 	}
 	foreach (var item in litery)
+	{
 		Console.WriteLine($"{item.Key} - {item.Value}");
+	}
 }
 
 /*
@@ -518,12 +592,14 @@ static void Zadanie_4_12()
 	Console.WriteLine($"Liczba wierszy = {wiersze.Length}");
 	int i = 1;
 	foreach (var item in wiersze)
+	{
 		Console.WriteLine($"wiersz {i++} - {item.Length} znaków");
+	}
 }
 
 /*
-Napisz program, który przeanalizuje dany łańcuch pod kątem wielokrotnego występowania słów w tekście. 
-Przykładowo dla zmiennej łańcuchowej o zawartości: „Kiedy idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się idzie – odpowiedział Puchatek” 
+Napisz program, który przeanalizuje dany łańcuch pod kątem wielokrotnego występowania słów w tekście.
+Przykładowo dla zmiennej łańcuchowej o zawartości: „Kiedy idzie się po miód z balonikiem, to trzeba się starać, żeby pszczoły nie wiedziały, po co się idzie – odpowiedział Puchatek”
 – program powinien wypisać raport o słowach powielonych w tym tekście: idzie – 2 razy, po – 2 razy, się – 3 razy.
 */
 static void Zadanie_4_13()
@@ -531,21 +607,27 @@ static void Zadanie_4_13()
 	Console.WriteLine("Zadanie 4.13");
 	Console.Write("Napisz jakieś zdanie: ");
 	string[] wyrazy = Console.ReadLine()!.Split(' ');
-	Dictionary<string, int> litery = new Dictionary<string, int>();
+	Dictionary<string, int> litery = new();
 	foreach (string item in wyrazy)
 	{
 		if (litery.ContainsKey(item))
+		{
 			litery[item]++;
+		}
 		else
+		{
 			litery[item] = 1;
+		}
 	}
 	foreach (var item in litery)
+	{
 		Console.WriteLine($"{item.Key} - {item.Value}");
+	}
 }
 
 /*
-W danej firmie środki trwałe mają identyfikatory złożone z kilku liter, myślnika oraz czterech cyfr. Te cztery cyfry to rok zakupu danego środka trwałego. 
-Przykładowe identyfikatory to: KOMG-2002, BH-2010. Napisz program, który deklaruje 5-cio elementową tablicę typu string dla środków trwałych, 
+W danej firmie środki trwałe mają identyfikatory złożone z kilku liter, myślnika oraz czterech cyfr. Te cztery cyfry to rok zakupu danego środka trwałego.
+Przykładowe identyfikatory to: KOMG-2002, BH-2010. Napisz program, który deklaruje 5-cio elementową tablicę typu string dla środków trwałych,
 którą należy zainicjalizować przykładowymi identyfikatorami w czasie deklaracji. Program ma dla każdego środka trwałego podać liczbę lat, jakie upłynęły od jego zakupu.
 */
 static void Zadanie_4_14()
@@ -561,16 +643,16 @@ static void Zadanie_4_14()
 }
 
 /*
-Napisz program, który szyfruje podany przez użytkownika tekst prostym szyfrem podstawieniowym zwanym „gaderypoluki”. Nazwa pochodzi od jednego z najczęściej używanych kluczy GA-DE-RY-PO-LU-KI. 
-Klucz ten zawiera pary znakowych zamienników umieszczonych między myślnikami. Litery, których nie ma w kluczu pozostawia się w szyfrowanym tekście bez zmian. 
+Napisz program, który szyfruje podany przez użytkownika tekst prostym szyfrem podstawieniowym zwanym „gaderypoluki”. Nazwa pochodzi od jednego z najczęściej używanych kluczy GA-DE-RY-PO-LU-KI.
+Klucz ten zawiera pary znakowych zamienników umieszczonych między myślnikami. Litery, których nie ma w kluczu pozostawia się w szyfrowanym tekście bez zmian.
 Przykładowo tekst „DRZEWO” po zaszyfrowaniu ma postać „EYZDWP”.
 0 1 2 3 4 5 6 7 8 9 10 11
 G A D E R Y P O L U K  I
-Wskazówki: Można zastosować w programie klucz z pominięciem myślników (GADERYPOLUKI). Wówczas można przyjąć, że znaki na parzystych pozycjach (numerując od 0) mają zamiennik po prawej stronie, 
-a znaki na nieparzystych pozycjach mają swój zamiennik z lewej strony (np. litera O jest na pozycji numer 7 i ma swój zamiennik z lewej strony, czyli P). 
-Zostaje zatem sprawdzenie, czy dany znak szyfrowanego tekstu występuje w kluczu, a jeśli tak to, na której pozycji klucza – parzystej czy nieparzystej. 
-W tym celu możesz wykorzystać poznaną w tym rozdziale metodę IndexOf(). Dla zaszyfrowanego tekstu najlepiej będzie zadeklarować nową zmienną łańcuchową i zainicjalizować ją wartością pustą. 
-Zalecamy, aby zrobić to przy pomocy statycznego pola publicznego String.Empty zawierającego łańcuch pusty (czyli ""), np.: string tekstZaszyfrowany = String.Empty;. 
+Wskazówki: Można zastosować w programie klucz z pominięciem myślników (GADERYPOLUKI). Wówczas można przyjąć, że znaki na parzystych pozycjach (numerując od 0) mają zamiennik po prawej stronie,
+a znaki na nieparzystych pozycjach mają swój zamiennik z lewej strony (np. litera O jest na pozycji numer 7 i ma swój zamiennik z lewej strony, czyli P).
+Zostaje zatem sprawdzenie, czy dany znak szyfrowanego tekstu występuje w kluczu, a jeśli tak to, na której pozycji klucza – parzystej czy nieparzystej.
+W tym celu możesz wykorzystać poznaną w tym rozdziale metodę IndexOf(). Dla zaszyfrowanego tekstu najlepiej będzie zadeklarować nową zmienną łańcuchową i zainicjalizować ją wartością pustą.
+Zalecamy, aby zrobić to przy pomocy statycznego pola publicznego String.Empty zawierającego łańcuch pusty (czyli ""), np.: string tekstZaszyfrowany = String.Empty;.
 A następnie w pętli dodawać kolejny znak z tekstu źródłowego – ten sam lub zamieniony zgodnie z kluczem (jeśli jest w kluczu).
 */
 static void Zadanie_4_15()
@@ -586,13 +668,21 @@ static void Zadanie_4_15()
 		if (klucz.Contains(item))
 		{
 			foreach (var paraKlucza in klucze)
+			{
 				if (paraKlucza[0] == item)
+				{
 					tekstZaszyfrowany += paraKlucza[1];
+				}
 				else if (paraKlucza[1] == item)
+				{
 					tekstZaszyfrowany += paraKlucza[0];
+				}
+			}
 		}
 		else
+		{
 			tekstZaszyfrowany += item;
+		}
 	}
 	Console.WriteLine(tekstZaszyfrowany);
 }

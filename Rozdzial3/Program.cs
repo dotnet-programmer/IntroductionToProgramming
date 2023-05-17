@@ -6,7 +6,9 @@ try
 {
 	Console.Write("Podaj numer zadania 1 - 15: ");
 	if (!int.TryParse(Console.ReadLine(), out int numer))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
 
 	switch (numer)
 	{
@@ -71,7 +73,7 @@ try
 			break;
 		case 9:
 			/*
-			Napisz program w czterech wariantach (a, b, c i d), którego efektem działania będzie „figura” utworzona ze znaku gwiazdki (*) przedstawiona na danym rysunku. 
+			Napisz program w czterech wariantach (a, b, c i d), którego efektem działania będzie „figura” utworzona ze znaku gwiazdki (*) przedstawiona na danym rysunku.
 			(Liczbę wyświetlanych wierszy podaje użytkownik).
 			*/
 			Zadanie_3_9();
@@ -90,7 +92,7 @@ try
 			break;
 		case 12:
 			/*
-			Napisz program pobierający od użytkownika liczby całkowite. Program ma pobierać te liczby do czasu, gdy użytkownik wprowadzi wartość 0 (zero). 
+			Napisz program pobierający od użytkownika liczby całkowite. Program ma pobierać te liczby do czasu, gdy użytkownik wprowadzi wartość 0 (zero).
 			Wynikiem działania programu ma być informacja o sumie wprowadzonych przez użytkownika liczb.
 			*/
 			Zadanie_3_12();
@@ -103,7 +105,7 @@ try
 			break;
 		case 14:
 			/*
-			Liczba N jest doskonała, gdy jest równa sumie swych podzielników mniejszych od niej samej np. 6=1+2+3=6 – jest liczbą doskonałą. 
+			Liczba N jest doskonała, gdy jest równa sumie swych podzielników mniejszych od niej samej np. 6=1+2+3=6 – jest liczbą doskonałą.
 			Napisz program znajdujący liczby doskonałe w przedziale <1,n>, gdzie n podaje użytkownik.
 			*/
 			Zadanie_3_14();
@@ -136,7 +138,10 @@ static void Zadanie_3_1()
 	Console.WriteLine("Zadanie 3.1");
 	Console.Write("Podaj rok: ");
 	if (!int.TryParse(Console.ReadLine(), out int rok))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	string odpowiedz = (rok % 4 == 0) && ((rok % 400 == 0) || (rok % 100 != 0)) ? "Rok przestępny" : "Rok nieprzestępny";
 	Console.WriteLine(odpowiedz);
 }
@@ -152,7 +157,10 @@ static void Zadanie_3_2()
 	bool isA = (int.TryParse(wspolczynniki[0], out int a));
 	bool isB = (int.TryParse(wspolczynniki[1], out int b));
 	if (!(isA && isB))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	string odpowiedz = (a % b == 0) ? $"Liczba {b} jest dzielnikiem liczby {a}" : $"Liczba {b} jest nie dzielnikiem liczby {a}";
 	Console.WriteLine(odpowiedz);
 }
@@ -169,10 +177,16 @@ static void Zadanie_3_3()
 	bool isB = (double.TryParse(wspolczynniki[1], out double b));
 	bool isC = (double.TryParse(wspolczynniki[2], out double c));
 	if (!(isA && isB && isC))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	double max = a;
 	for (int i = 1; i < 3; i++)
+	{
 		max = double.Parse(wspolczynniki[i]) > max ? double.Parse(wspolczynniki[i]) : max;
+	}
+
 	Console.WriteLine($"Max liczba = {max}");
 
 	//Console.WriteLine("Zadanie 3.3");
@@ -193,16 +207,28 @@ static void Zadanie_3_4()
 	bool isA = (double.TryParse(wspolczynniki[0], out double a));
 	bool isB = (double.TryParse(wspolczynniki[1], out double b));
 	if (!(isA && isB))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	double wynik = 0;
 	if (wspolczynniki[2] == "+")
+	{
 		wynik = a + b;
+	}
 	else if (wspolczynniki[2] == "-")
+	{
 		wynik = a - b;
+	}
 	else if (wspolczynniki[2] == "*")
+	{
 		wynik = a * b;
+	}
 	else if (wspolczynniki[2] == "/")
+	{
 		wynik = a / b;
+	}
+
 	Console.WriteLine($"{a} {wspolczynniki[2]} {b} = {wynik}");
 }
 
@@ -218,9 +244,15 @@ static void Zadanie_3_5()
 	bool isB = (double.TryParse(wspolczynniki[1], out double b));
 	bool isC = (double.TryParse(wspolczynniki[2], out double c));
 	if (!(isA && isB && isC))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	if (a == 0)
+	{
 		throw new ArgumentException("Parametr a nie może być zerem!");
+	}
+
 	double delta = b * b - 4 * a * c;
 	string odpowiedz;
 	if (delta > 0)
@@ -235,7 +267,10 @@ static void Zadanie_3_5()
 		odpowiedz = $"Równanie ma 1 pierwiastek: x0 = {x0}";
 	}
 	else
+	{
 		odpowiedz = $"Równanie nie ma pierwiastków";
+	}
+
 	Console.WriteLine(odpowiedz);
 }
 
@@ -255,15 +290,12 @@ static void Zadanie_3_6()
 	bool isA = (double.TryParse(wspolczynniki[0], out double a));
 	bool isB = (double.TryParse(wspolczynniki[1], out double b));
 	if (!(isA && isB))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	double BMI = a / (b * b);
-	string wskaznik = "";
-	if (BMI < 18.5)
-		wskaznik = "niedowaga";
-	else if (BMI >= 18.5 && BMI < 25)
-		wskaznik = "wartość prawidłowa";
-	else
-		wskaznik = "nadwaga";
+	string wskaznik = BMI < 18.5 ? "niedowaga" : BMI < 25 ? "wartość prawidłowa" : "nadwaga";
 	Console.WriteLine($"BMI = {BMI} - {wskaznik}");
 }
 
@@ -319,19 +351,16 @@ static void Zadanie_3_8()
 	Console.WriteLine("Zadanie 3.8");
 	Console.Write("Podaj swoją średnią ocen: ");
 	if (!double.TryParse(Console.ReadLine(), out double srednia))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
-	int stypendium = 0;
-	if (srednia is >= 2 and < 4)
-		stypendium = 0;
-	else if (srednia is >= 4 and < 4.8)
-		stypendium = 350;
-	else
-		stypendium = 550;
+	}
+
+	int stypendium = srednia is >= 2 and < 4 ? 0 : srednia < 4.8 ? 350 : 550;
 	Console.WriteLine($"Dla średniej {srednia} przysługuje stypendium w wysokości: {stypendium} zł");
 }
 
 /*
-Napisz program w czterech wariantach (a, b, c i d), którego efektem działania będzie „figura” utworzona ze znaku gwiazdki (*) przedstawiona na danym rysunku. 
+Napisz program w czterech wariantach (a, b, c i d), którego efektem działania będzie „figura” utworzona ze znaku gwiazdki (*) przedstawiona na danym rysunku.
 (Liczbę wyświetlanych wierszy podaje użytkownik).
 */
 static void Zadanie_3_9()
@@ -339,13 +368,18 @@ static void Zadanie_3_9()
 	Console.WriteLine("Zadanie 3.9");
 	Console.Write("Podaj liczbę wierszy dla wyświetlanego kwadratu: ");
 	if (!int.TryParse(Console.ReadLine(), out int N))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
 
 	Console.WriteLine("\na)");
 	for (int i = 1; i <= N; i++)
 	{
 		for (int j = 1; j <= i; j++)
+		{
 			Console.Write("*");
+		}
+
 		Console.WriteLine();
 	}
 
@@ -353,7 +387,10 @@ static void Zadanie_3_9()
 	for (int i = 1; i <= N; i++)
 	{
 		for (int j = N; j >= i; j--)
+		{
 			Console.Write("*");
+		}
+
 		Console.WriteLine();
 	}
 
@@ -365,7 +402,10 @@ static void Zadanie_3_9()
 			Console.Write(" ");
 		}
 		for (int j = 1; j <= i; j++)
+		{
 			Console.Write("*");
+		}
+
 		Console.WriteLine();
 	}
 
@@ -373,15 +413,24 @@ static void Zadanie_3_9()
 	for (int i = 1; i <= N; i++)
 	{
 		for (int j = 1; j <= N; j++)
+		{
 			if (i != 1 && i != N)
 			{
 				if (j == 1 || j == N)
+				{
 					Console.Write("*");
+				}
 				else
+				{
 					Console.Write(" ");
+				}
 			}
 			else
+			{
 				Console.Write("*");
+			}
+		}
+
 		Console.WriteLine();
 	}
 }
@@ -394,15 +443,13 @@ static void Zadanie_3_10()
 	Console.WriteLine("Zadanie 3.10");
 	Console.Write("Podaj silnie którą chcesz obliczyć: ");
 	if (!int.TryParse(Console.ReadLine(), out int N))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	Console.WriteLine(silnia(N));
 
-	int silnia(int liczba)
-	{
-		if (liczba == 1)
-			return 1;
-		return liczba * silnia(liczba - 1);
-	}
+	int silnia(int liczba) => liczba == 1 ? 1 : liczba * silnia(liczba - 1);
 }
 
 /*
@@ -424,7 +471,7 @@ static void Zadanie_3_11()
 }
 
 /*
-Napisz program pobierający od użytkownika liczby całkowite. Program ma pobierać te liczby do czasu, gdy użytkownik wprowadzi wartość 0 (zero). 
+Napisz program pobierający od użytkownika liczby całkowite. Program ma pobierać te liczby do czasu, gdy użytkownik wprowadzi wartość 0 (zero).
 Wynikiem działania programu ma być informacja o sumie wprowadzonych przez użytkownika liczb.
 */
 static void Zadanie_3_12()
@@ -436,9 +483,11 @@ static void Zadanie_3_12()
 	{
 		Console.Write("Podaj liczbę: ");
 		if (!int.TryParse(Console.ReadLine(), out liczba))
+		{
 			throw new ArgumentException("Nie wpisałeś liczby!");
-		suma += liczba;
+		}
 
+		suma += liczba;
 	} while (liczba != 0);
 	Console.WriteLine($"Suma podanych liczb: {suma}");
 }
@@ -451,20 +500,27 @@ static void Zadanie_3_13()
 	Console.WriteLine("Zadanie 3.13");
 	Console.Write("Podaj liczbę kończącą szereg: ");
 	if (!int.TryParse(Console.ReadLine(), out int liczba))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	int wynik = 0;
 	for (int i = 1; i <= liczba; i++)
 	{
 		if (i % 2 != 0)
+		{
 			wynik += i;
+		}
 		else
+		{
 			wynik -= i;
+		}
 	}
 	Console.WriteLine($"Wynik = {wynik}");
 }
 
 /*
-Liczba N jest doskonała, gdy jest równa sumie swych podzielników mniejszych od niej samej np. 6=1+2+3=6 – jest liczbą doskonałą. 
+Liczba N jest doskonała, gdy jest równa sumie swych podzielników mniejszych od niej samej np. 6=1+2+3=6 – jest liczbą doskonałą.
 Napisz program znajdujący liczby doskonałe w przedziale <1,n>, gdzie n podaje użytkownik.
 */
 static void Zadanie_3_14()
@@ -472,12 +528,17 @@ static void Zadanie_3_14()
 	Console.WriteLine("Zadanie 3.14");
 	Console.Write("Podaj liczbę kończącą przedział: ");
 	if (!int.TryParse(Console.ReadLine(), out int N))
+	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
+	}
+
 	string odpowiedz = "";
 	for (int i = 1; i <= N; i++)
 	{
 		if (CzyDoskonala(i))
+		{
 			odpowiedz += $"{i} ";
+		}
 	}
 	Console.WriteLine($"Liczby doskonałe w przedziale <1,{N}> : {odpowiedz}");
 
@@ -485,8 +546,13 @@ static void Zadanie_3_14()
 	{
 		int suma = 0;
 		for (int i = 1; i < liczba; i++)
+		{
 			if (liczba % i == 0)
+			{
 				suma += i;
+			}
+		}
+
 		return (suma == liczba);
 	}
 }
@@ -499,12 +565,19 @@ static void Zadanie_3_15()
 	Console.WriteLine("Zadanie 3.15");
 	int ilosc = 0;
 	for (int z1 = 0; z1 <= 10; z1++)
+	{
 		for (int z2 = 0; z2 <= 5; z2++)
+		{
 			for (int z5 = 0; z5 <= 2; z5++)
+			{
 				if (z1 * 1 + z2 * 2 + z5 * 5 == 10)
 				{
 					Console.WriteLine("1zł = {0}   2zł = {1}   5zł = {2}", z1, z2, z5);
 					ilosc++;
 				}
+			}
+		}
+	}
+
 	Console.WriteLine($"Jest {ilosc} sposobów na wypłacenie 10 zł");
 }

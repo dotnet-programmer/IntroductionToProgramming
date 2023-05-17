@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Rozdzial3;
 
-namespace Rozdzial3
+internal enum DniTygodnia
 {
-	internal enum DniTygodnia
-	{
-		poniedzialek = 1, wtorek, sroda, czwartek, piatek, sobota, niedziela
-	}
+	poniedzialek = 1, wtorek, sroda, czwartek, piatek, sobota, niedziela
 }
