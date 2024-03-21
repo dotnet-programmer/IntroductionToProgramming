@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rozdzial2", "Rozdzial2\Rozdzial2.csproj", "{53CE7B10-D3DB-4354-9509-5EA268D2FD34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter2", "Rozdzial2\Chapter2.csproj", "{53CE7B10-D3DB-4354-9509-5EA268D2FD34}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rozdzial4", "Rozdzial4\Rozdzial4.csproj", "{2B2133FC-CFEC-4478-9C65-5FE8A62C645C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter4", "Rozdzial4\Chapter4.csproj", "{2B2133FC-CFEC-4478-9C65-5FE8A62C645C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rozdzial5", "Rozdzial5\Rozdzial5.csproj", "{50C203CC-D71A-40F7-9D62-8BAD527CD904}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter5", "Rozdzial5\Chapter5.csproj", "{50C203CC-D71A-40F7-9D62-8BAD527CD904}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rozdzial6", "Rozdzial6\Rozdzial6.csproj", "{3DDAE074-D719-475B-8EA3-13A4A55237CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter6", "Rozdzial6\Chapter6.csproj", "{3DDAE074-D719-475B-8EA3-13A4A55237CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rozdzial3", "Rozdzial3\Rozdzial3.csproj", "{1C061017-0D75-49CF-BCF5-06DE9846E9BD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chapter3", "Rozdzial3\Chapter3.csproj", "{1C061017-0D75-49CF-BCF5-06DE9846E9BD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
