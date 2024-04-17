@@ -1,4 +1,4 @@
-﻿namespace Rozdzial6;
+﻿namespace Chapter6;
 
 internal class Prad
 {

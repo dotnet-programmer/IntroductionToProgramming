@@ -1,4 +1,4 @@
-﻿// Rozdział 5
+﻿// Chapter 5
 
 using System.Diagnostics;
 
@@ -19,14 +19,14 @@ try
 			Napisz program zawierający metodę statyczną obliczającą temperaturę w stopniach Fahrenheita na temperaturę w stopniach Celsjusza.
 			Metoda ma przyjmować jeden argument (temperaturę w stopniach Fahrenheita) i zwracać temperaturę w stopniach Celsjusza.
 			*/
-			Zadanie_5_1();
+			Exercise_5_1();
 			break;
 		case 2:
 			/*
 			Napisz program wczytujący 3 liczby rzeczywiste a, b, x, a następnie wywołujący metodę, która sprawdza, czy liczba x należy do przedziału obustronnie otwartego (a, b).
 			Metoda sprawdzająca ma zwrócić wartość logiczną, którą należy zinterpretować w metodzie Main() z podaniem stosownego komunikatu.
 			*/
-			Zadanie_5_2();
+			Exercise_5_2();
 			break;
 		case 3:
 			/*
@@ -36,17 +36,17 @@ try
 			aktualne współrzędne punktu mają być pamiętane dzięki użyciu argumentów przesyłanych przez referencje. Program ma wyświetlić współrzędne punktu po przesunięciu o wektor wek.
 			Przykładowo, gdyby użytkownik podał początkowe współrzędne punktu A (2, 1), to wówczas program znajdzie położenie punktu A po przesunięciu w miejscu o współrzędnych (5, 3) (czyli 2+3, 1+2).
 			*/
-			Zadanie_5_3();
+			Exercise_5_3();
 			break;
 		case 4:
 			/*
 			Napisz program, który mnoży elementy tablicy jednowymiarowej przez zadaną liczbę. Mnożenie ma być wykonane w metodzie statycznej przyjmującej jako argumenty tablicę typu int oraz liczbę całkowitą (mnożnik).
-			Wykonaj zadanie w dwóch wariantach:
+			Wykonaj Exercise w dwóch wariantach:
 			a) Wewnątrz metody tworzona jest nowa tablica wynikowa, która ma być zwrócona przez metodę.
 			b) Wyniki mnożenia elementów tablicy mają zostać umieszczone w tablicy będącej argumentem metody (w tym wariancie metoda ma niczego nie zwracać).
 			Przykładowo dla tablicy o elementach {1,4,6,8,2} oraz mnożniku 2 program powinien wyświetlić tablicę {2,8,12,16,4}.
 			*/
-			Zadanie_5_4();
+			Exercise_5_4();
 			break;
 		case 5:
 			/*
@@ -69,7 +69,7 @@ try
 			***
 			***
 			*/
-			Zadanie_5_5();
+			Exercise_5_5();
 			break;
 		case 6:
 			/*
@@ -77,20 +77,20 @@ try
 			W tym przypadku metoda ma powielać łańcuch znaków (konkatenować tyle razy, ile wynika z mnożnika). Przykładowo dla tablicy o elementach {"ala", "kot", "dom"}
 			oraz mnożniku 2 program powinien wyświetlić tablicę {"alaala", "kotkot", "domdom"}.
 			*/
-			Zadanie_5_6();
+			Exercise_5_6();
 			break;
 		case 7:
 			/*
 			Napisz statyczną metodę, która oblicza wyrażenie: W = (x+1) + (x+2) + (x+3) +.......+ (x+n). W metodzie Main() wywołaj funkcję dla x i n (liczb naturalnych) wczytanych z klawiatury.
 			*/
-			Zadanie_5_7();
+			Exercise_5_7();
 			break;
 		case 8:
 			/*
 			Napisz metodę, która oblicza sumę cyfr liczby naturalnej x. W programie głównym wywołaj funkcję dla x wczytanego z klawiatury.
 			Przykładowo jeśli użytkownik wpisze 125, to metoda powinna zwrócić wartość 8 (1+2+5=8).
 			*/
-			Zadanie_5_8();
+			Exercise_5_8();
 			break;
 		case 9:
 			/*
@@ -98,18 +98,18 @@ try
 			w jednym metoda znajdująca wyraz ciągu ma być rekurencyjna,
 			a w drugim ma wykorzystać iteracyjne podejście (z użyciem pętli).
 			*/
-			Zadanie_5_9();
+			Exercise_5_9();
 			break;
 		case 10:
 			/*
-			Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Zadanie wykonaj najpierw bez udziału kompilatora, a dopiero później uruchom program i sprawdź otrzymany wynik.
+			Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Exercise wykonaj najpierw bez udziału kompilatora, a dopiero później uruchom program i sprawdź otrzymany wynik.
 			static int Oblicz(int n)
 			{
 				if (n <= 1) return (1);
 				else return (n + Oblicz(n - 1));
 			}
 			*/
-			Zadanie_5_10();
+			Exercise_5_10();
 			break;
 		default:
 			throw new ArgumentException("Liczba musi być z przedziału 1 - 15 !");
@@ -129,42 +129,44 @@ finally
 Napisz program zawierający metodę statyczną obliczającą temperaturę w stopniach Fahrenheita na temperaturę w stopniach Celsjusza.
 Metoda ma przyjmować jeden argument (temperaturę w stopniach Fahrenheita) i zwracać temperaturę w stopniach Celsjusza.
 */
-static void Zadanie_5_1()
+static void Exercise_5_1()
 {
 	Console.WriteLine("Zadanie 5.1");
 	Console.Write("Podaj temp w *F: ");
 	if (double.TryParse(Console.ReadLine(), out double temp))
 	{
-		Console.WriteLine(ConvertFahrenheitToCelsjusz(temp));
+		Console.WriteLine(ConvertFahrenheitToCelsius(temp));
 	}
 	else
 	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
 }
-static double ConvertFahrenheitToCelsjusz(double temp) => 5.0 / 9.0 * (temp - 32);
+
+static double ConvertFahrenheitToCelsius(double temp) 
+	=> 5.0 / 9.0 * (temp - 32);
 
 /*
 Napisz program wczytujący 3 liczby rzeczywiste a, b, x, a następnie wywołujący metodę, która sprawdza, czy liczba x należy do przedziału obustronnie otwartego (a, b).
 Metoda sprawdzająca ma zwrócić wartość logiczną, którą należy zinterpretować w metodzie Main() z podaniem stosownego komunikatu.
 */
-static void Zadanie_5_2()
+static void Exercise_5_2()
 {
 	Console.WriteLine("Zadanie 5.2");
 	Console.Write("Podaj 3 liczby rzeczywiste a, b oraz c: ");
-	string[] wspolczynniki = Console.ReadLine()!.Split(' ');
-	bool isA = (double.TryParse(wspolczynniki[0], out double a));
-	bool isB = (double.TryParse(wspolczynniki[1], out double b));
-	bool isC = (double.TryParse(wspolczynniki[2], out double c));
+	string[] coefficients = Console.ReadLine().Split(' ');
+	bool isA = (double.TryParse(coefficients[0], out double a));
+	bool isB = (double.TryParse(coefficients[1], out double b));
+	bool isC = (double.TryParse(coefficients[2], out double c));
 	if (!(isA && isB && isC))
 	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
 
-	string wynik = CzyNalezy(a, b, c) ? "należy" : "nie należy";
-	Console.WriteLine($"Liczba {c} {wynik} do przedziału ({a},{b})");
+	string result = IsItBelongs(a, b, c) ? "należy" : "nie należy";
+	Console.WriteLine($"Liczba {c} {result} do przedziału ({a},{b})");
 }
-static bool CzyNalezy(double a, double b, double x) => x > a && x < b;
+static bool IsItBelongs(double a, double b, double x) => x > a && x < b;
 
 /*
 Napisz program, który ma znaleźć współrzędne punktu po przesunięciu o dany wektor. W metodzie Main() wczytaj od użytkownika współrzędne punktu A oraz zadeklaruj współrzędne wektora wek [3, 2],
@@ -173,13 +175,13 @@ mają zostać przesłane do tej metody przez referencję, a współrzędne wekto
 aktualne współrzędne punktu mają być pamiętane dzięki użyciu argumentów przesyłanych przez referencje. Program ma wyświetlić współrzędne punktu po przesunięciu o wektor wek.
 Przykładowo, gdyby użytkownik podał początkowe współrzędne punktu A (2, 1), to wówczas program znajdzie położenie punktu A po przesunięciu w miejscu o współrzędnych (5, 3) (czyli 2+3, 1+2).
 */
-static void Zadanie_5_3()
+static void Exercise_5_3()
 {
 	Console.WriteLine("Zadanie 5.3");
 	Console.Write("Podaj współrzędne punktu A: ");
-	string[] wspolczynniki = Console.ReadLine()!.Split(' ');
-	bool isAx = (double.TryParse(wspolczynniki[0], out double Ax));
-	bool isAy = (double.TryParse(wspolczynniki[1], out double Ay));
+	string[] coefficients = Console.ReadLine().Split(' ');
+	bool isAx = (double.TryParse(coefficients[0], out double Ax));
+	bool isAy = (double.TryParse(coefficients[1], out double Ay));
 	if (!(isAx && isAy))
 	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
@@ -197,12 +199,12 @@ static void Przesun(ref double ax, ref double ay, int wx, int wy)
 
 /*
 Napisz program, który mnoży elementy tablicy jednowymiarowej przez zadaną liczbę. Mnożenie ma być wykonane w metodzie statycznej przyjmującej jako argumenty tablicę typu int oraz liczbę całkowitą (mnożnik).
-Wykonaj zadanie w dwóch wariantach:
+Wykonaj Exercise w dwóch wariantach:
 a) Wewnątrz metody tworzona jest nowa tablica wynikowa, która ma być zwrócona przez metodę.
 b) Wyniki mnożenia elementów tablicy mają zostać umieszczone w tablicy będącej argumentem metody (w tym wariancie metoda ma niczego nie zwracać).
 Przykładowo dla tablicy o elementach {1,4,6,8,2} oraz mnożniku 2 program powinien wyświetlić tablicę {2,8,12,16,4}.
 */
-static void Zadanie_5_4()
+static void Exercise_5_4()
 {
 	Console.WriteLine("Zadanie 5.4");
 	int[] tablica = { 1, 4, 6, 8, 2 };
@@ -257,19 +259,19 @@ Podaj znak: *
 ***
 ***
 */
-static void Zadanie_5_5()
+static void Exercise_5_5()
 {
 	Console.WriteLine("Zadanie 5.5");
 	Console.Write("Podaj długość, szerokość i znak do rysowania: ");
-	string[] wspolczynniki = Console.ReadLine()!.Split(' ');
-	bool isX = (int.TryParse(wspolczynniki[0], out int x));
-	bool isY = (int.TryParse(wspolczynniki[1], out int y));
+	string[] coefficients = Console.ReadLine().Split(' ');
+	bool isX = (int.TryParse(coefficients[0], out int x));
+	bool isY = (int.TryParse(coefficients[1], out int y));
 	if (!(isX && isY))
 	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
 
-	char znak = wspolczynniki[2][0];
+	char znak = coefficients[2][0];
 	Rysuj(x, y, znak);
 	Console.WriteLine();
 	Rysuj(y, x, znak);
@@ -292,7 +294,7 @@ Uzupełnij program z zadania 5.4 (dowolny wariant) o metodę przeładowaną przy
 W tym przypadku metoda ma powielać łańcuch znaków (konkatenować tyle razy, ile wynika z mnożnika). Przykładowo dla tablicy o elementach {"ala", "kot", "dom"}
 oraz mnożniku 2 program powinien wyświetlić tablicę {"alaala", "kotkot", "domdom"}.
 */
-static void Zadanie_5_6()
+static void Exercise_5_6()
 {
 	Console.WriteLine("Zadanie 5.6");
 	int[] tablica = { 1, 4, 6, 8, 2 };
@@ -361,13 +363,13 @@ static void PomnozElementy4(string[] tab, int x)
 /*
 Napisz statyczną metodę, która oblicza wyrażenie: W = (x+1) + (x+2) + (x+3) +.......+ (x+n). W metodzie Main() wywołaj funkcję dla x i n (liczb naturalnych) wczytanych z klawiatury.
 */
-static void Zadanie_5_7()
+static void Exercise_5_7()
 {
 	Console.WriteLine("Zadanie 5.7");
 	Console.Write("Podaj 2 liczby calkowite: ");
-	string[] wspolczynniki = Console.ReadLine()!.Split(' ');
-	bool isX = (int.TryParse(wspolczynniki[0], out int x));
-	bool isY = (int.TryParse(wspolczynniki[1], out int y));
+	string[] coefficients = Console.ReadLine().Split(' ');
+	bool isX = (int.TryParse(coefficients[0], out int x));
+	bool isY = (int.TryParse(coefficients[1], out int y));
 	if (!(isX && isY))
 	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
@@ -392,7 +394,7 @@ static int Wyrazenie2(int x, int n)
 Napisz metodę, która oblicza sumę cyfr liczby naturalnej x. W programie głównym wywołaj funkcję dla x wczytanego z klawiatury.
 Przykładowo jeśli użytkownik wpisze 125, to metoda powinna zwrócić wartość 8 (1+2+5=8).
 */
-static void Zadanie_5_8()
+static void Exercise_5_8()
 {
 	Console.WriteLine("Zadanie 5.8");
 	Console.Write("Podaj liczbę całkowitą: ");
@@ -420,7 +422,7 @@ Wykonaj program znajdujący n-ty wyraz ciągu Fibonacciego według wzoru Wykonaj
 w jednym metoda znajdująca wyraz ciągu ma być rekurencyjna,
 a w drugim ma wykorzystać iteracyjne podejście (z użyciem pętli).
 */
-static void Zadanie_5_9()
+static void Exercise_5_9()
 {
 	Console.WriteLine("Zadanie 5.9");
 	Console.Write("Podaj liczbę całkowitą: ");
@@ -510,14 +512,14 @@ static long FibonacciIteracjaTablica(int n, ref int ile)
 }
 
 /*
-Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Zadanie wykonaj najpierw bez udziału kompilatora, a dopiero później uruchom program i sprawdź otrzymany wynik.
+Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Exercise wykonaj najpierw bez udziału kompilatora, a dopiero później uruchom program i sprawdź otrzymany wynik.
 static int Oblicz(int n)
 {
 	if (n <= 1) return (1);
 	else return (n + Oblicz(n - 1));
 }
 */
-static void Zadanie_5_10()
+static void Exercise_5_10()
 {
 	Console.WriteLine("Zadanie 5.10");
 	Console.WriteLine(Oblicz(5));

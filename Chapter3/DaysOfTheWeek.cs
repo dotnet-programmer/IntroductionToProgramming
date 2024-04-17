@@ -1,6 +1,6 @@
-﻿namespace Rozdzial3;
+﻿namespace Chapter3;
 
-internal enum DniTygodnia
+internal enum DaysOfTheWeek
 {
 	poniedzialek = 1, wtorek, sroda, czwartek, piatek, sobota, niedziela
 }
