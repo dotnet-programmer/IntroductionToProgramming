@@ -106,8 +106,8 @@ Napisz program, który tworzy klasę Prostokat, zawierającą dwie prywatne dane
 static void Exercise_6_1()
 {
 	Console.WriteLine("Zadanie 6.1");
-	var prostokat = new Prostokat(5, 10);
-	prostokat.Prezentuj();
+	var rectangle = new Rectangle(5, 10);
+	rectangle.Display();
 }
 
 /*
@@ -117,10 +117,10 @@ oraz obwód wszystkich prostokątów w tablicy używając (wewnątrz pętli fore
 static void Exercise_6_2()
 {
 	Console.WriteLine("Zadanie 6.2");
-	Prostokat[] tablica = { new(5, 10), new(3, 3), new(4, 8), new(1, 12), new(9, 6), new(1, 1) };
-	foreach (var item in tablica)
+	Rectangle[] rectangles = [new(5, 10), new(3, 3), new(4, 8), new(1, 12), new(9, 6), new(1, 1)];
+	foreach (var item in rectangles)
 	{
-		item.Prezentuj();
+		item.Display();
 	}
 }
 
@@ -130,13 +130,12 @@ Uzupełnij program z poprzedniego zadania o definicję metody statycznej, która
 static void Exercise_6_3()
 {
 	Console.WriteLine("Zadanie 6.3");
-	Prostokat[] tablica = { new(5, 10), new(3, 3), new(4, 8), new(1, 12), new(9, 6), new(1, 1) };
-	foreach (var item in tablica)
+	Rectangle[] rectangles = [new(5, 10), new(3, 3), new(4, 8), new(1, 12), new(9, 6), new(1, 1)];
+	foreach (var item in rectangles)
 	{
-		item.Prezentuj();
+		item.Display();
 	}
-
-	Prostokat.Najwiekszy();
+	Rectangle.BiggestRectangle();
 }
 
 /*
@@ -148,14 +147,14 @@ Zdefiniuj klasę, która pozwoli na rejestrację zużycia energii elektrycznej. 
 static void Exercise_6_4()
 {
 	Console.WriteLine("Zadanie 6.4");
-	Prad licznik1 = new(100D);
-	Prad licznik2 = new(200, 400);
-	Console.WriteLine($"Stan poczatkowy licznika 1: {licznik1.InitialState}");
-	Console.WriteLine($"Stan poczatkowy licznika 2: {licznik2.InitialState}");
-	Console.WriteLine($"Stan bieżący licznika 1: {licznik1.CurrentState}");
-	Console.WriteLine($"Stan bieżący licznika 2: {licznik2.CurrentState}");
-	Console.WriteLine($"Zużycie licznika1 = {licznik1.ObliczZuzycie()}");
-	Console.WriteLine($"Zużycie licznika2 = {licznik2.ObliczZuzycie()}");
+	Electricity counter1 = new(100D);
+	Electricity counter2 = new(200, 400);
+	Console.WriteLine($"Stan poczatkowy licznika 1: {counter1.InitialState}");
+	Console.WriteLine($"Stan poczatkowy licznika 2: {counter2.InitialState}");
+	Console.WriteLine($"Stan bieżący licznika 1: {counter1.CurrentState}");
+	Console.WriteLine($"Stan bieżący licznika 2: {counter2.CurrentState}");
+	Console.WriteLine($"Zużycie licznika1 = {counter1.CalculateUsage()}");
+	Console.WriteLine($"Zużycie licznika2 = {counter2.CalculateUsage()}");
 }
 
 /*
@@ -165,14 +164,14 @@ realizującą przesunięcie o zadane wielkości oraz metodę składową Wyswietl
 static void Exercise_6_5()
 {
 	Console.WriteLine("Zadanie 6.5");
-	var punkt1 = new Punkt(2, 2);
-	var punkt2 = new Punkt(3, 3);
-	punkt1.Wyswietl();
-	punkt2.Wyswietl();
-	punkt1.Przesun(5, 5);
-	punkt2.Przesun(5, 5);
-	punkt1.Wyswietl();
-	punkt2.Wyswietl();
+	MyPoint point1 = new(2, 2);
+	MyPoint point2 = new(3, 3);
+	point1.Display();
+	point2.Display();
+	point1.Move(5, 5);
+	point2.Move(5, 5);
+	point1.Display();
+	point2.Display();
 }
 
 /*
@@ -181,14 +180,14 @@ Napisz program (używając klasy Punkt zdefiniowanej w poprzednim zadaniu), któ
 static void Exercise_6_6()
 {
 	Console.WriteLine("Zadanie 6.6");
-	Punkt[] tablica = { new Punkt(-5, -3), new Punkt(0, -1), new Punkt(10, 3) };
-	string tekst = CzyWspolliniowe(tablica[0], tablica[1], tablica[2]) ? "Współliniowe" : "Niewspółliniowe";
-	Console.WriteLine(tekst);
-	Punkt[] tablica2 = { new Punkt(-5, 2), new Punkt(2, -1), new Punkt(9, -5) };
-	tekst = CzyWspolliniowe(tablica2[0], tablica2[1], tablica2[2]) ? "Współliniowe" : "Niewspółliniowe";
-	Console.WriteLine(tekst);
+	MyPoint[] points1 = [new MyPoint(-5, -3), new MyPoint(0, -1), new MyPoint(10, 3)];
+	string isCollinear = IsCollinear(points1[0], points1[1], points1[2]) ? "Współliniowe" : "Niewspółliniowe";
+	Console.WriteLine(isCollinear);
+	MyPoint[] points2 = [new MyPoint(-5, 2), new MyPoint(2, -1), new MyPoint(9, -5)];
+	isCollinear = IsCollinear(points1[0], points1[1], points1[2]) ? "Współliniowe" : "Niewspółliniowe";
+	Console.WriteLine(isCollinear);
 }
-static bool CzyWspolliniowe(Punkt p1, Punkt p2, Punkt p3)
+static bool IsCollinear(MyPoint p1, MyPoint p2, MyPoint p3)
 {
 	double p1p2 = Math.Sqrt(Math.Pow(p2.X - p1.X, 2) + Math.Pow(p2.Y - p1.Y, 2));
 	double p1p3 = Math.Sqrt(Math.Pow(p3.X - p1.X, 2) + Math.Pow(p3.Y - p1.Y, 2));
@@ -203,20 +202,22 @@ Zdefiniuj klasę Odcinek składającą się z dwóch punktów klasy Punkt. W kla
 static void Exercise_6_7()
 {
 	Console.WriteLine("Zadanie 6.7");
-	Odcinek odc1 = new(new Punkt(1, 1), new Punkt(2, 2));
-	Console.WriteLine(odc1.DlugoscOdcinka());
+	LineSegment lineSegment = new(new MyPoint(1, 1), new MyPoint(2, 2));
+	Console.WriteLine(lineSegment.Length());
 }
 
 /*
 Zdefiniuj klasę Prostopadloscian, która pozwoli na reprezentację danych opisujących długość, szerokość i wysokość prostopadłościanu.
 W klasie zaimplementuj metody pozwalające na obliczenie objętości prostopadłościanu, oraz porównanie objętości dwóch prostopadłościanów.
 */
-static void Exercise_6_8() => Console.WriteLine("Zadanie 6.8");
+static void Exercise_6_8()
+	=> Console.WriteLine("Zadanie 6.8");
 
 /*
 Wykonaj zadania 6.1 oraz 6.2 z użyciem struktury (zamiast klasy).
 */
-static void Exercise_6_9() => Console.WriteLine("Zadanie 6.9");
+static void Exercise_6_9()
+	=> Console.WriteLine("Zadanie 6.9");
 
 /*
 Napisz program z użyciem struktury KandydatNaStudia, która ma posiadać następujące pola: nazwisko, punktyMatematyka, punktyInformatyka, punktyJezykObcy.
@@ -228,7 +229,7 @@ W metodzie Main() utwórz obiekty dla struktury (jako elementy tablicy) dla kilk
 static void Exercise_6_10()
 {
 	Console.WriteLine("Zadanie 6.10");
-	StudyCandidate[] candidates = { new("Janek", 23, 25, 56), new("Franek", 63, 75, 86), new("Brajanek", 1, 2, 3) };
+	StudyCandidate[] candidates = [new("Janek", 23, 25, 56), new("Franek", 63, 75, 86), new("Brajanek", 1, 2, 3)];
 	foreach (var item in candidates)
 	{
 		Console.WriteLine($"{item.Name} - {item.TotalPoints()}");

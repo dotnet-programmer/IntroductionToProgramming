@@ -102,7 +102,7 @@ try
 			break;
 		case 10:
 			/*
-			Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Exercise wykonaj najpierw bez udziału kompilatora, a dopiero później uruchom program i sprawdź otrzymany wynik.
+			Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Zadanie wykonaj najpierw bez udziału kompilatora, a dopiero później uruchom program i sprawdź otrzymany wynik.
 			static int Oblicz(int n)
 			{
 				if (n <= 1) return (1);
@@ -143,7 +143,7 @@ static void Exercise_5_1()
 	}
 }
 
-static double ConvertFahrenheitToCelsius(double temp) 
+static double ConvertFahrenheitToCelsius(double temp)
 	=> 5.0 / 9.0 * (temp - 32);
 
 /*
@@ -166,7 +166,8 @@ static void Exercise_5_2()
 	string result = IsItBelongs(a, b, c) ? "należy" : "nie należy";
 	Console.WriteLine($"Liczba {c} {result} do przedziału ({a},{b})");
 }
-static bool IsItBelongs(double a, double b, double x) => x > a && x < b;
+static bool IsItBelongs(double a, double b, double x)
+	=> x > a && x < b;
 
 /*
 Napisz program, który ma znaleźć współrzędne punktu po przesunięciu o dany wektor. W metodzie Main() wczytaj od użytkownika współrzędne punktu A oraz zadeklaruj współrzędne wektora wek [3, 2],
@@ -188,10 +189,10 @@ static void Exercise_5_3()
 	}
 
 	int Wx = 3, Wy = 2;
-	Przesun(ref Ax, ref Ay, Wx, Wy);
+	Move(ref Ax, ref Ay, Wx, Wy);
 	Console.WriteLine($"Nowe położenie punktu: ({Ax},{Ay})");
 }
-static void Przesun(ref double ax, ref double ay, int wx, int wy)
+static void Move(ref double ax, ref double ay, int wx, int wy)
 {
 	ax += wx;
 	ay += wy;
@@ -207,31 +208,32 @@ Przykładowo dla tablicy o elementach {1,4,6,8,2} oraz mnożniku 2 program powin
 static void Exercise_5_4()
 {
 	Console.WriteLine("Zadanie 5.4");
-	int[] tablica = { 1, 4, 6, 8, 2 };
-	int mnoznik = 2;
-	foreach (var item in tablica)
+	int[] numbers = [1, 4, 6, 8, 2];
+	int multiplier = 2;
+	foreach (var item in numbers)
 	{
 		Console.Write($"{item} ");
 	}
 
 	Console.WriteLine();
-	foreach (var item in PomnozElementy1(tablica, mnoznik))
+	foreach (var item in MultiplyElements1(numbers, multiplier))
 	{
 		Console.Write($"{item} ");
 	}
 
 	Console.WriteLine();
-	PomnozElementy2(tablica, mnoznik);
-	foreach (var item in tablica)
+	MultiplyElements2(numbers, multiplier);
+	foreach (var item in numbers)
 	{
 		Console.Write($"{item} ");
 	}
 
 	Console.WriteLine();
 }
-static int[] PomnozElementy1(int[] tab, int x) => tab.Select(t => t * x).ToArray();
+static int[] MultiplyElements1(int[] tab, int x)
+	=> tab.Select(t => t * x).ToArray();
 
-static void PomnozElementy2(int[] tab, int x)
+static void MultiplyElements2(int[] tab, int x)
 {
 	for (int i = 0; i < tab.Length; i++)
 	{
@@ -271,19 +273,19 @@ static void Exercise_5_5()
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
 
-	char znak = coefficients[2][0];
-	Rysuj(x, y, znak);
+	string sign = coefficients[2];
+	Draw(x, y, sign);
 	Console.WriteLine();
-	Rysuj(y, x, znak);
+	Draw(y, x, sign);
 	Console.WriteLine();
 }
-static void Rysuj(int x, int y, char znak)
+static void Draw(int x, int y, string sign)
 {
 	for (int i = 0; i < y; i++)
 	{
 		for (int j = 0; j < x; j++)
 		{
-			Console.Write(znak);
+			Console.Write(sign);
 		}
 		Console.WriteLine();
 	}
@@ -297,59 +299,60 @@ oraz mnożniku 2 program powinien wyświetlić tablicę {"alaala", "kotkot", "do
 static void Exercise_5_6()
 {
 	Console.WriteLine("Zadanie 5.6");
-	int[] tablica = { 1, 4, 6, 8, 2 };
-	string[] napisy = { "ala", "kot", "dom" };
-	int mnoznik = 2;
-	foreach (var item in tablica)
+	int[] numbers = [1, 4, 6, 8, 2];
+	string[] words = ["ala", "kot", "dom"];
+	int multiplier = 2;
+	foreach (var item in numbers)
 	{
 		Console.Write($"{item} ");
 	}
 
 	Console.WriteLine();
-	foreach (var item in PomnozElementy1(tablica, mnoznik))
+	foreach (var item in MultiplyElements1(numbers, multiplier))
 	{
 		Console.Write($"{item} ");
 	}
 
 	Console.WriteLine();
-	PomnozElementy2(tablica, mnoznik);
-	foreach (var item in tablica)
+	MultiplyElements2(numbers, multiplier);
+	foreach (var item in numbers)
 	{
 		Console.Write($"{item} ");
 	}
 
 	Console.WriteLine();
 
-	foreach (var item in napisy)
+	foreach (var item in words)
 	{
 		Console.Write($"{item} ");
 	}
 
 	Console.WriteLine();
-	foreach (var item in PomnozElementy3(napisy, mnoznik))
+	foreach (var item in MultiplyElements3(words, multiplier))
 	{
 		Console.Write(item + " ");
 	}
 
 	Console.WriteLine();
-	PomnozElementy4(napisy, mnoznik);
-	foreach (var item in napisy)
+	MultiplyElements4(words, multiplier);
+	foreach (var item in words)
 	{
 		Console.Write($"{item} ");
 	}
 
 	Console.WriteLine();
 }
-static string[] PomnozElementy3(string[] tab, int x) => tab.Select(t =>
-														 {
-															 for (int i = 1; i < x; i++)
-															 {
-																 t += t;
-															 }
+static string[] MultiplyElements3(string[] tab, int x)
+	=> tab.Select(t =>
+		{
+			for (int i = 1; i < x; i++)
+			{
+				t += t;
+			}
 
-															 return t;
-														 }).ToArray();
-static void PomnozElementy4(string[] tab, int x)
+			return t;
+		}).ToArray();
+static void MultiplyElements4(string[] tab, int x)
 {
 	for (int i = 0; i < tab.Length; i++)
 	{
@@ -375,19 +378,20 @@ static void Exercise_5_7()
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
 
-	Console.WriteLine($"Wyrażenie = {Wyrazenie(x, y)}"); // rekurencja
-	Console.WriteLine($"Wyrażenie 2 = {Wyrazenie2(x, y)}"); // iteracja
+	Console.WriteLine($"Wyrażenie = {Expression(x, y)}"); // rekurencja
+	Console.WriteLine($"Wyrażenie 2 = {Expression2(x, y)}"); // iteracja
 }
-static int Wyrazenie(int x, int n) => n == 1 ? x + n : (x + n) + Wyrazenie(x, --n);
+static int Expression(int x, int n)
+	=> n == 1 ? x + n : (x + n) + Expression(x, --n);
 
-static int Wyrazenie2(int x, int n)
+static int Expression2(int x, int n)
 {
-	int suma = 0;
+	int sum = 0;
 	for (int i = 1; i <= n; i++)
 	{
-		suma += (x + i);
+		sum += (x + i);
 	}
-	return suma;
+	return sum;
 }
 
 /*
@@ -404,17 +408,17 @@ static void Exercise_5_8()
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
 
-	Console.WriteLine($"Suma cyfr liczy naturalnej = {SumaLiczb(x)}");
+	Console.WriteLine($"Suma cyfr liczy naturalnej = {SumOfNumbers(x)}");
 }
-static int SumaLiczb(int x)
+static int SumOfNumbers(int x)
 {
-	int suma = 0;
+	int sum = 0;
 	do
 	{
-		suma += x % 10;
+		sum += x % 10;
 		x /= 10;
 	} while (x > 0);
-	return suma;
+	return sum;
 }
 
 /*
@@ -433,72 +437,67 @@ static void Exercise_5_9()
 	}
 
 	long item = 0;
-	string czas;
 	Console.WriteLine($"{x}-ty wyraz ciągu Fibonacciego:");
-	int ileCzynnosci = 0;
-	var sw = new Stopwatch();
-	sw.Start();
-	item = FibonacciRekurencja(x, ref ileCzynnosci);
-	sw.Stop();
-	czas = sw.Elapsed.ToString();
-	Console.WriteLine($"Rekurencja: {item}, wykonano {ileCzynnosci} czynności w czasie {czas}");
-	sw.Reset();
-	ileCzynnosci = 0;
-	sw.Start();
-	item = FibonacciIteracja(x, ref ileCzynnosci);
-	sw.Stop();
-	czas = sw.Elapsed.ToString();
-	Console.WriteLine($"Iteracja:   {item}, wykonano {ileCzynnosci} czynności w czasie {czas}");
-	sw.Reset();
-	ileCzynnosci = 0;
-	sw.Start();
-	item = FibonacciIteracjaLista(x, ref ileCzynnosci);
-	sw.Stop();
-	czas = sw.Elapsed.ToString();
-	Console.WriteLine($"It Lista:   {item}, wykonano {ileCzynnosci} czynności w czasie {czas}");
-	sw.Reset();
-	ileCzynnosci = 0;
-	sw.Start();
-	item = FibonacciIteracjaTablica(x, ref ileCzynnosci);
-	sw.Stop();
-	czas = sw.Elapsed.ToString();
-	Console.WriteLine($"ITablica:   {item}, wykonano {ileCzynnosci} czynności w czasie {czas}");
-}
-static long FibonacciRekurencja(int n, ref int ile)
-{
-	ile++;
-	return n <= 1 ? n : FibonacciRekurencja(n - 2, ref ile) + FibonacciRekurencja(n - 1, ref ile);
-}
-static long FibonacciIteracja(int n, ref int ile)
-{
-	long wynik = 0;
-	if (n is 0 or 1)
-	{
-		wynik = 1;
-	}
 
-	long liczba1 = 1;
-	long liczba2 = 1;
+	int steps = 0;
+	var sw = Stopwatch.StartNew();
+	item = FibonacciRecursion(x, ref steps);
+	sw.Stop();
+	Console.WriteLine($"Rekurencja: {item}, wykonano {steps} czynności w czasie {sw.Elapsed}");
+
+	steps = 0;
+	sw.Reset();
+	sw.Start();
+	item = FibonacciIteration(x, ref steps);
+	sw.Stop();
+	Console.WriteLine($"Iteracja: {item}, wykonano {steps} czynności w czasie {sw.Elapsed}");
+
+	steps = 0;
+	sw.Reset();
+	sw.Start();
+	item = FibonacciIterationList(x, ref steps);
+	sw.Stop();
+	Console.WriteLine($"It Lista: {item}, wykonano {steps} czynności w czasie {sw.Elapsed}");
+
+	steps = 0;
+	sw.Reset();
+	sw.Start();
+	item = FibonacciIterationArray(x, ref steps);
+	sw.Stop();
+	Console.WriteLine($"It Tablica: {item}, wykonano {steps} czynności w czasie {sw.Elapsed}");
+}
+static long FibonacciRecursion(int n, ref int counter)
+{
+	counter++;
+	return n <= 1
+		? n
+		: FibonacciRecursion(n - 2, ref counter) + FibonacciRecursion(n - 1, ref counter);
+}
+static long FibonacciIteration(int n, ref int counter)
+{
+	long n2 = 0;
+	long n1 = 1;
+	long result = 0;
 	for (int i = 0; i < n; i++)
 	{
-		liczba2 = liczba1;
-		liczba1 = wynik;
-		wynik = liczba1 + liczba2;
-		ile++;
+		n2 = n1;
+		n1 = result;
+		result = n1 + n2;
+		counter++;
 	}
-	return wynik;
+	return result;
 }
-static long FibonacciIteracjaLista(int n, ref int ile)
+static long FibonacciIterationList(int n, ref int counter)
 {
-	List<long> numbers = new() { 0, 1 };
+	List<long> numbers = [0, 1];
 	for (int i = 2; i <= n; i++)
 	{
 		numbers.Add(numbers[i - 2] + numbers[i - 1]);
-		ile++;
+		counter++;
 	}
 	return numbers[n];
 }
-static long FibonacciIteracjaTablica(int n, ref int ile)
+static long FibonacciIterationArray(int n, ref int counter)
 {
 	long[] numbers = new long[n + 1];
 	numbers[0] = 0;
@@ -506,13 +505,13 @@ static long FibonacciIteracjaTablica(int n, ref int ile)
 	for (int i = 2; i <= n; i++)
 	{
 		numbers[i] = (numbers[i - 2] + numbers[i - 1]);
-		ile++;
+		counter++;
 	}
 	return numbers[n];
 }
 
 /*
-Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Exercise wykonaj najpierw bez udziału kompilatora, a dopiero później uruchom program i sprawdź otrzymany wynik.
+Jaki będzie rezultat metody Oblicz() wywołanej z parametrem n = 5? Zadanie wykonaj najpierw bez udziału kompilatora, a dopiero później uruchom program i sprawdź otrzymany wynik.
 static int Oblicz(int n)
 {
 	if (n <= 1) return (1);
@@ -522,6 +521,9 @@ static int Oblicz(int n)
 static void Exercise_5_10()
 {
 	Console.WriteLine("Zadanie 5.10");
-	Console.WriteLine(Oblicz(5));
+	Console.WriteLine(Calculate(5));
 }
-static int Oblicz(int n) => n <= 1 ? 1 : n + Oblicz(n - 1);
+static int Calculate(int n)
+	=> n <= 1
+	? 1
+	: n + Calculate(n - 1);
