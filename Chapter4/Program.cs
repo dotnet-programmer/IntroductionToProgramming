@@ -211,7 +211,7 @@ static void Exercise_4_2()
 	Console.WriteLine();
 }
 
-// Napisz program wyświetlający informacje o wypełnionej przez użytkownika tablicy nelementowej:
+// Napisz program wyświetlający informacje o wypełnionej przez użytkownika tablicy n-elementowej:
 //- wartość i numer pozycji największego elementu,
 //- wartość i numer pozycji najmniejszego elementu,
 //- średnia wartości wszystkich elementów tablicy,
@@ -225,7 +225,7 @@ static void Exercise_4_3()
 	}
 
 	int[] numbers = new int[size];
-	for (int i = 0; i < numbers.Length; i++)
+	for (int i = 0; i < size; i++)
 	{
 		Console.Write($"Podaj {i + 1} element tablicy: ");
 		if (!int.TryParse(Console.ReadLine(), out int element))
@@ -243,7 +243,7 @@ static void Exercise_4_3()
 	int positiveNumbers = 0;
 	double avg = 0;
 
-	for (int i = 0; i < numbers.Length; i++)
+	for (int i = 0; i < size; i++)
 	{
 		if (numbers[i] > max)
 		{
@@ -271,20 +271,19 @@ static void Exercise_4_3()
 
 // Napisz program, który podaje, ile jest liczb pierwszych w tablicy 100 elementowej typu int. Tablicę należy wypełnić losowymi wartościami.
 // Wskazówka: Poniższy fragment programu pokazuje działanie klasy Random (która zawiera generator liczb pseudolosowych)
-// – w pętli zostanie wyświetlonych 100 liczb wybranych losowo z zakresu 1 – 999 (o zakresie decydują argumenty podane w wywołaniu metody Next()43).
+// – w pętli zostanie wyświetlonych 100 liczb wybranych losowo z zakresu 1 – 999 (o zakresie decydują argumenty podane w wywołaniu metody Next()).
 // Random rand = new Random();
 // for (int i = 0; i < 100; i++)
 //	 Console.Write("{0,8}", rand.Next(1, 1000));
 static void Exercise_4_4()
 {
 	Console.WriteLine("Zadanie 4.4");
-	var rand = new Random();
+	Random rand = new();
 	int[] numbers = new int[100];
 	for (int i = 0; i < numbers.Length; i++)
 	{
 		numbers[i] = rand.Next(1, 1000);
 	}
-
 	List<int> primes = [];
 	foreach (var item in numbers)
 	{
@@ -336,22 +335,14 @@ static void Exercise_4_5()
 
 	Random rand = new();
 	int[] numbers1 = new int[size];
-	for (int i = 0; i < numbers1.Length; i++)
+	for (int i = 0; i < size; i++)
 	{
 		numbers1[i] = rand.Next(1, 1000);
 	}
 
-	int[] numbers2 = new int[numbers1.Length];
-	//for (int i = 0; i < tab1.Length; i++)
-	//{
-	//	if (i == tab1.Length - 1)
-	//		tab2[0] = tab1[tab1.Length - 1];
-	//	else
-	//		tab2[i + 1] = tab1[i];
-	//}
-
-	numbers2[0] = numbers1[numbers1.Length - 1];
-	for (int i = 0; i < numbers1.Length - 1; i++)
+	int[] numbers2 = new int[size];
+	numbers2[0] = numbers1[^1];
+	for (int i = 0; i < size - 1; i++)
 	{
 		numbers2[i + 1] = numbers1[i];
 	}
@@ -360,13 +351,11 @@ static void Exercise_4_5()
 	{
 		Console.Write(item + " ");
 	}
-
 	Console.WriteLine();
 	foreach (var item in numbers2)
 	{
 		Console.Write(item + " ");
 	}
-
 	Console.WriteLine();
 }
 
@@ -377,11 +366,14 @@ static void Exercise_4_6()
 {
 	Console.WriteLine("Zadanie 4.6");
 	var array = new double[5, 5];
-	var random = new Random();
+	Random random = new();
 	double sum = 0;
-	for (int i = 0; i < array.GetLength(0); i++) // GetLength(0) pobiera rozmiar tablicy pierwszego wymiaru
+
+	// GetLength(0) pobiera rozmiar tablicy pierwszego wymiaru
+	for (int i = 0; i < array.GetLength(0); i++)
 	{
-		for (int j = 0; j < array.GetLength(1); j++) // GetLength(1) pobiera rozmiar tablicy drugiego wymiaru
+		// GetLength(1) pobiera rozmiar tablicy drugiego wymiaru
+		for (int j = 0; j < array.GetLength(1); j++)
 		{
 			array[i, j] = random.NextDouble() * random.Next(100);
 			if (i == j)
@@ -395,9 +387,9 @@ static void Exercise_4_6()
 	{
 		for (int j = 0; j < array.GetLength(1); j++)
 		{
-			Console.Write($"{array[i, j],6:0.00} "); // formatowanie tekstu, wyrównanie do 6 znaków, 2 miejsca po przecinku
+			// formatowanie tekstu, wyrównanie do 6 znaków, 2 miejsca po przecinku
+			Console.Write($"{array[i, j],6:0.00} ");
 		}
-
 		Console.WriteLine();
 	}
 	Console.WriteLine($"Suma elementów na głównej przekątnej = {sum:0.00}");
@@ -405,8 +397,8 @@ static void Exercise_4_6()
 
 /*
 Napisz program, który dodaje dwie macierze o rozmiarze 2 x 3. Elementy macierzy należy umieścić w tablicach dwuwymiarowych w trakcie deklaracji.
-Program ma wyświetlić macierz wynikową. Wskazówka: Dodawanie macierzy – macierz wynikowa C zawiera elementy, które stanowią sumę elementów macierzy A i B o odpowiednich indeksach, tzn.
-element w zerowym wierszu i zerowej kolumnie macierzy A jest dodawany do elementu o tych samych indeksach macierzy B, element A[0,1] do B[0,1]... itd.
+Program ma wyświetlić macierz wynikową. Wskazówka: Dodawanie macierzy – macierz wynikowa C zawiera elementy, które stanowią sumę elementów macierzy A i B o odpowiednich indeksach,
+tzn. element w zerowym wierszu i zerowej kolumnie macierzy A jest dodawany do elementu o tych samych indeksach macierzy B, element A[0,1] do B[0,1]... itd.
 */
 static void Exercise_4_7()
 {
@@ -428,7 +420,6 @@ static void Exercise_4_7()
 		{
 			Console.Write($"{arrayC[i, j],6:0.00} ");
 		}
-
 		Console.WriteLine();
 	}
 }
@@ -447,8 +438,7 @@ dniTygodnia[1, 2] = "dienstag";
 static void Exercise_4_8()
 {
 	Console.WriteLine("Zadanie 4.8");
-	string[,] daysOfTheWeek;
-	daysOfTheWeek = new string[7, 3]; // pamiętaj o zmianie rozmiaru tablicy
+	string[,] daysOfTheWeek = new string[7, 3];
 	daysOfTheWeek[0, 0] = "poniedzialek";
 	daysOfTheWeek[1, 0] = "wtorek";
 	daysOfTheWeek[2, 0] = "środa";
@@ -490,8 +480,7 @@ static void Exercise_4_9()
 {
 	Console.WriteLine("Zadanie 4.9");
 	Console.Write("Napisz jakies zdanie: ");
-	string[] sentence = Console.ReadLine().Split(' ');
-	Console.WriteLine($"Liczba podanych wyrazów = {sentence.Length}");
+	Console.WriteLine($"Liczba podanych wyrazów = {Console.ReadLine().Split(' ').Length}");
 }
 
 /*

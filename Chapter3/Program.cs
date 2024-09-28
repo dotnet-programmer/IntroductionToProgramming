@@ -139,14 +139,12 @@ Rok przestępny dzieli się bez reszty przez 4, nie dzieli się przez 100 (za wy
 static void Exercise_3_1()
 {
 	Console.WriteLine("Zadanie 3.1");
-	Console.Write("Podaj rok: ");
-	if (!int.TryParse(Console.ReadLine(), out int year))
+	int year;
+	do
 	{
-		throw new ArgumentException("Nie wpisałeś liczby!");
-	}
-
-	string result = (year % 4 == 0) && ((year % 400 == 0) || (year % 100 != 0)) ? "Rok przestępny" : "Rok nieprzestępny";
-	Console.WriteLine(result);
+		Console.Write("Podaj rok: ");
+	} while (!int.TryParse(Console.ReadLine(), out year));
+	Console.WriteLine($"Rok {year} jest {((year % 4 == 0) && ((year % 400 == 0) || (year % 100 != 0)) ? "przestępny" : "nieprzestępny")}");
 }
 
 /*
@@ -156,17 +154,14 @@ Program powinien wyświetlać informację, czy druga liczba jest dzielnikiem pie
 static void Exercise_3_2()
 {
 	Console.WriteLine("Zadanie 3.2");
-	Console.Write("Podaj 2 liczby całkowite oddzielone spacją: ");
-	string[] coefficients = Console.ReadLine().Split(' ');
-	bool isA = (int.TryParse(coefficients[0], out int a));
-	bool isB = (int.TryParse(coefficients[1], out int b));
-	if (!(isA && isB))
+	int a, b;
+	string[] coefficients;
+	do
 	{
-		throw new ArgumentException("Nie wpisałeś liczby!");
-	}
-
-	string result = (a % b == 0) ? $"Liczba {b} jest dzielnikiem liczby {a}" : $"Liczba {b} nie jest dzielnikiem liczby {a}";
-	Console.WriteLine(result);
+		Console.Write("Podaj 2 liczby całkowite oddzielone spacją: ");
+		coefficients = Console.ReadLine().Split(' ');
+	} while (!int.TryParse(coefficients[0], out a) || !int.TryParse(coefficients[1], out b));
+	Console.WriteLine((a % b == 0) ? $"Liczba {b} jest dzielnikiem liczby {a}" : $"Liczba {b} nie jest dzielnikiem liczby {a}");
 }
 
 /*
@@ -175,65 +170,39 @@ Napisz program pobierający od użytkownika 3 liczby. Program ma wyświetlić wa
 static void Exercise_3_3()
 {
 	Console.WriteLine("Zadanie 3.3");
-	Console.Write("Podaj 3 liczby: ");
-	string[] coefficients = Console.ReadLine().Split(' ');
-	bool isA = (double.TryParse(coefficients[0], out double a));
-	bool isB = (double.TryParse(coefficients[1], out double b));
-	bool isC = (double.TryParse(coefficients[2], out double c));
-	if (!(isA && isB && isC))
-	{
-		throw new ArgumentException("Nie wpisałeś liczby!");
-	}
-
-	double max = a;
-	for (int i = 1; i < 3; i++)
-	{
-		max = double.Parse(coefficients[i]) > max ? double.Parse(coefficients[i]) : max;
-	}
-
-	Console.WriteLine($"Max liczba = {max}");
-
-	//Console.WriteLine("Zadanie 3.3");
-	//Console.Write("Podaj 3 liczby: ");
-	//int[] coefficients = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
-	//Console.WriteLine($"Max liczba = {coefficients.Max()}");
+	Console.Write("Podaj 3 liczby oddzielone spacją: ");
+	Console.WriteLine($"Max liczba = {Console.ReadLine().Split(' ').Select(int.Parse).Max()}");
 }
 
 /*
-Napisz program – prosty kalkulator, który wczytuje od użytkownika wartości dwóch zmiennych typu double oraz znak operacji (+ lub – lub * lub /), a następnie wyświetla wynik operacji dla podanych wartości.
+Napisz program – prosty kalkulator, który wczytuje od użytkownika wartości dwóch zmiennych typu double oraz znak operacji (+ lub – lub * lub /),
+a następnie wyświetla wynik operacji dla podanych wartości.
 Przykładowo użytkownik wprowadził znak „+” i liczby 1,5 oraz 2,5, program powinien wyświetlić sumę obu liczb, czyli 4,0.
 */
 static void Exercise_3_4()
 {
 	Console.WriteLine("Zadanie 3.4");
-	Console.Write("Podaj 2 liczby oraz znak operacji: ");
-	string[] coefficients = Console.ReadLine().Split(' ');
-	bool isA = (double.TryParse(coefficients[0], out double a));
-	bool isB = (double.TryParse(coefficients[1], out double b));
-	if (!(isA && isB))
+	double a, b;
+	string sign;
+	string[] coefficients;
+	string[] operations = ["+", "-", "*", "/"];
+	do
 	{
-		throw new ArgumentException("Nie wpisałeś liczby!");
-	}
+		Console.Write("Podaj 2 liczby oraz znak operacji: ");
+		coefficients = Console.ReadLine().Split(' ');
+		sign = coefficients[2];
+	} while (!double.TryParse(coefficients[0], out a) || !double.TryParse(coefficients[1], out b) || !operations.Contains(sign));
 
-	double result = 0;
-	if (coefficients[2] == "+")
+	double result = sign switch
 	{
-		result = a + b;
-	}
-	else if (coefficients[2] == "-")
-	{
-		result = a - b;
-	}
-	else if (coefficients[2] == "*")
-	{
-		result = a * b;
-	}
-	else if (coefficients[2] == "/")
-	{
-		result = a / b;
-	}
+		"+" => a + b,
+		"-" => a - b,
+		"*" => a * b,
+		"/" => a / b,
+		_ => throw new ArgumentException("Zły znak operacji!")
+	};
 
-	Console.WriteLine($"{a} {coefficients[2]} {b} = {result}");
+	Console.WriteLine($"{a} {sign} {b} = {result}");
 }
 
 /*
@@ -460,9 +429,7 @@ static void Exercise_3_10()
 	Console.WriteLine(factorial(N));
 
 	int factorial(int number)
-		=> number <= 1
-		? 1
-		: number * factorial(number - 1);
+		=> number <= 1 ? 1 : number * factorial(number - 1);
 }
 
 /*
@@ -565,7 +532,7 @@ static void Exercise_3_14()
 			}
 		}
 
-		return (sum == number);
+		return sum == number;
 	}
 }
 

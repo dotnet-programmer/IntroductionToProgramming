@@ -141,10 +141,10 @@ static void Exercise_5_1()
 	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
-}
 
-static double ConvertFahrenheitToCelsius(double temp)
-	=> 5.0 / 9.0 * (temp - 32);
+	static double ConvertFahrenheitToCelsius(double temp)
+		=> 5.0 / 9.0 * (temp - 32);
+}
 
 /*
 Napisz program wczytujący 3 liczby rzeczywiste a, b, x, a następnie wywołujący metodę, która sprawdza, czy liczba x należy do przedziału obustronnie otwartego (a, b).
@@ -165,9 +165,10 @@ static void Exercise_5_2()
 
 	string result = IsItBelongs(a, b, c) ? "należy" : "nie należy";
 	Console.WriteLine($"Liczba {c} {result} do przedziału ({a},{b})");
+
+	static bool IsItBelongs(double a, double b, double x)
+		=> x > a && x < b;
 }
-static bool IsItBelongs(double a, double b, double x)
-	=> x > a && x < b;
 
 /*
 Napisz program, który ma znaleźć współrzędne punktu po przesunięciu o dany wektor. W metodzie Main() wczytaj od użytkownika współrzędne punktu A oraz zadeklaruj współrzędne wektora wek [3, 2],
@@ -191,11 +192,12 @@ static void Exercise_5_3()
 	int Wx = 3, Wy = 2;
 	Move(ref Ax, ref Ay, Wx, Wy);
 	Console.WriteLine($"Nowe położenie punktu: ({Ax},{Ay})");
-}
-static void Move(ref double ax, ref double ay, int wx, int wy)
-{
-	ax += wx;
-	ay += wy;
+
+	static void Move(ref double ax, ref double ay, int wx, int wy)
+	{
+		ax += wx;
+		ay += wy;
+	}
 }
 
 /*
@@ -214,30 +216,28 @@ static void Exercise_5_4()
 	{
 		Console.Write($"{item} ");
 	}
-
 	Console.WriteLine();
 	foreach (var item in MultiplyElements1(numbers, multiplier))
 	{
 		Console.Write($"{item} ");
 	}
-
 	Console.WriteLine();
 	MultiplyElements2(numbers, multiplier);
 	foreach (var item in numbers)
 	{
 		Console.Write($"{item} ");
 	}
-
 	Console.WriteLine();
-}
-static int[] MultiplyElements1(int[] tab, int x)
-	=> tab.Select(t => t * x).ToArray();
 
-static void MultiplyElements2(int[] tab, int x)
-{
-	for (int i = 0; i < tab.Length; i++)
+	static int[] MultiplyElements1(int[] tab, int x)
+		=> tab.Select(t => t * x).ToArray();
+
+	static void MultiplyElements2(int[] tab, int x)
 	{
-		tab[i] *= x;
+		for (int i = 0; i < tab.Length; i++)
+		{
+			tab[i] *= x;
+		}
 	}
 }
 
@@ -278,16 +278,17 @@ static void Exercise_5_5()
 	Console.WriteLine();
 	Draw(y, x, sign);
 	Console.WriteLine();
-}
-static void Draw(int x, int y, string sign)
-{
-	for (int i = 0; i < y; i++)
+
+	static void Draw(int x, int y, string sign)
 	{
-		for (int j = 0; j < x; j++)
+		for (int i = 0; i < y; i++)
 		{
-			Console.Write(sign);
+			for (int j = 0; j < x; j++)
+			{
+				Console.Write(sign);
+			}
+			Console.WriteLine();
 		}
-		Console.WriteLine();
 	}
 }
 
@@ -341,24 +342,37 @@ static void Exercise_5_6()
 	}
 
 	Console.WriteLine();
-}
-static string[] MultiplyElements3(string[] tab, int x)
-	=> tab.Select(t =>
+
+	static int[] MultiplyElements1(int[] tab, int x)
+		=> tab.Select(t => t * x).ToArray();
+
+	static void MultiplyElements2(int[] tab, int x)
+	{
+		for (int i = 0; i < tab.Length; i++)
+		{
+			tab[i] *= x;
+		}
+	}
+
+	static string[] MultiplyElements3(string[] tab, int x)
+		=> tab.Select(t =>
 		{
 			for (int i = 1; i < x; i++)
 			{
 				t += t;
 			}
-
 			return t;
-		}).ToArray();
-static void MultiplyElements4(string[] tab, int x)
-{
-	for (int i = 0; i < tab.Length; i++)
+		})
+		.ToArray();
+
+	static void MultiplyElements4(string[] tab, int x)
 	{
-		for (int j = 1; j < x; j++)
+		for (int i = 0; i < tab.Length; i++)
 		{
-			tab[i] += tab[i];
+			for (int j = 1; j < x; j++)
+			{
+				tab[i] += tab[i];
+			}
 		}
 	}
 }
@@ -378,20 +392,24 @@ static void Exercise_5_7()
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
 
-	Console.WriteLine($"Wyrażenie = {Expression(x, y)}"); // rekurencja
-	Console.WriteLine($"Wyrażenie 2 = {Expression2(x, y)}"); // iteracja
-}
-static int Expression(int x, int n)
-	=> n == 1 ? x + n : (x + n) + Expression(x, --n);
+	// rekurencja
+	Console.WriteLine($"Wyrażenie = {Expression(x, y)}");
 
-static int Expression2(int x, int n)
-{
-	int sum = 0;
-	for (int i = 1; i <= n; i++)
+	// iteracja
+	Console.WriteLine($"Wyrażenie 2 = {Expression2(x, y)}");
+
+	static int Expression(int x, int n)
+		=> n == 1 ? x + n : (x + n) + Expression(x, --n);
+
+	static int Expression2(int x, int n)
 	{
-		sum += (x + i);
+		int sum = 0;
+		for (int i = 1; i <= n; i++)
+		{
+			sum += (x + i);
+		}
+		return sum;
 	}
-	return sum;
 }
 
 /*
@@ -403,22 +421,22 @@ static void Exercise_5_8()
 	Console.WriteLine("Zadanie 5.8");
 	Console.Write("Podaj liczbę całkowitą: ");
 	bool isX = (int.TryParse(Console.ReadLine(), out int x));
-	if (!(isX))
+	if (!isX)
 	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
-
 	Console.WriteLine($"Suma cyfr liczy naturalnej = {SumOfNumbers(x)}");
-}
-static int SumOfNumbers(int x)
-{
-	int sum = 0;
-	do
+
+	static int SumOfNumbers(int x)
 	{
-		sum += x % 10;
-		x /= 10;
-	} while (x > 0);
-	return sum;
+		int sum = 0;
+		do
+		{
+			sum += x % 10;
+			x /= 10;
+		} while (x > 0);
+		return sum;
+	}
 }
 
 /*
@@ -431,7 +449,7 @@ static void Exercise_5_9()
 	Console.WriteLine("Zadanie 5.9");
 	Console.Write("Podaj liczbę całkowitą: ");
 	bool isX = (int.TryParse(Console.ReadLine(), out int x));
-	if (!(isX))
+	if (!isX)
 	{
 		throw new ArgumentException("Nie wpisałeś liczby!");
 	}
@@ -465,49 +483,53 @@ static void Exercise_5_9()
 	item = FibonacciIterationArray(x, ref steps);
 	sw.Stop();
 	Console.WriteLine($"It Tablica: {item}, wykonano {steps} czynności w czasie {sw.Elapsed}");
-}
-static long FibonacciRecursion(int n, ref int counter)
-{
-	counter++;
-	return n <= 1
-		? n
-		: FibonacciRecursion(n - 2, ref counter) + FibonacciRecursion(n - 1, ref counter);
-}
-static long FibonacciIteration(int n, ref int counter)
-{
-	long n2 = 0;
-	long n1 = 1;
-	long result = 0;
-	for (int i = 0; i < n; i++)
+
+	static long FibonacciRecursion(int n, ref int counter)
 	{
-		n2 = n1;
-		n1 = result;
-		result = n1 + n2;
 		counter++;
+		return n <= 1
+			? n
+			: FibonacciRecursion(n - 2, ref counter) + FibonacciRecursion(n - 1, ref counter);
 	}
-	return result;
-}
-static long FibonacciIterationList(int n, ref int counter)
-{
-	List<long> numbers = [0, 1];
-	for (int i = 2; i <= n; i++)
+
+	static long FibonacciIteration(int n, ref int counter)
 	{
-		numbers.Add(numbers[i - 2] + numbers[i - 1]);
-		counter++;
+		long n2 = 0;
+		long n1 = 1;
+		long result = 0;
+		for (int i = 0; i < n; i++)
+		{
+			n2 = n1;
+			n1 = result;
+			result = n1 + n2;
+			counter++;
+		}
+		return result;
 	}
-	return numbers[n];
-}
-static long FibonacciIterationArray(int n, ref int counter)
-{
-	long[] numbers = new long[n + 1];
-	numbers[0] = 0;
-	numbers[1] = 1;
-	for (int i = 2; i <= n; i++)
+
+	static long FibonacciIterationList(int n, ref int counter)
 	{
-		numbers[i] = (numbers[i - 2] + numbers[i - 1]);
-		counter++;
+		List<long> numbers = [0, 1];
+		for (int i = 2; i <= n; i++)
+		{
+			numbers.Add(numbers[i - 2] + numbers[i - 1]);
+			counter++;
+		}
+		return numbers[n];
 	}
-	return numbers[n];
+
+	static long FibonacciIterationArray(int n, ref int counter)
+	{
+		long[] numbers = new long[n + 1];
+		numbers[0] = 0;
+		numbers[1] = 1;
+		for (int i = 2; i <= n; i++)
+		{
+			numbers[i] = (numbers[i - 2] + numbers[i - 1]);
+			counter++;
+		}
+		return numbers[n];
+	}
 }
 
 /*
@@ -522,8 +544,7 @@ static void Exercise_5_10()
 {
 	Console.WriteLine("Zadanie 5.10");
 	Console.WriteLine(Calculate(5));
+
+	static int Calculate(int n)
+		=> n <= 1 ? 1 : n + Calculate(n - 1);
 }
-static int Calculate(int n)
-	=> n <= 1
-	? 1
-	: n + Calculate(n - 1);
